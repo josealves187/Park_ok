@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorTextButton">#F54800</color>
+    <color name="colorTextView">#F54800</color>
+    <color name="colorFundBotton">#ffff</color>
+    <color name="colorButtAction">#616161</color>
+    <color name="colorborder">#000</color>
+    <color name="colorTitleMenu">#616161</color>
+    <color name="colorItemSelected">#F54800</color>
+    <color name="colorItemNotSelected">#616161</color>
+    <color name="colorStrokeCardView">#F54800</color>
+    <color name="colorTextViewText">#616161</color>
+    <color name="color_toolbar_menu">#F54800</color>
+    <color name="color_toolbar">#636363</color>
+    <color name="colorTextButtonAdapete">#616161</color>
+    <color name="colorNameTextView">#616161</color>
+    <color name="colorNameTextViewTypeOfStay">#6E6E6E</color>
+    <color name="colorButtonAdapterAttendance">#000</color>
+
+
+
+</resources>

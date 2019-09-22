@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Park_Ok_colaborador</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_toolbar_calls">ATENDIMENTOS</string>
+    <string name="title_toolbar_historic">HISTORICO</string>
+    <string name="title_toolbar_calls_recover_password">Recuperar senha</string>
+    <string name="title_toolbar_details">Detalhes</string>
+    <string name="title_toolbar_type_vehicle">Tipo de veículo</string>
+    <string name="title_toolbar_type_stay">Atendimento</string>
+    <string name="title_toolbar_registratio_data">Dados cadastrais</string>
+    <string name="tv_change_adapter_attendance">ALTERAR</string>
+    <string name="btn_log_in_login">ENTRAR</string>
+    <string name="tv_register_login_Not_registered_yet">Ainda não possui cadastro?</string>
+    <string name="tv_title_login">LOGIN</string>
+    <string name="input_time">Entrada: %s</string>
+    <string name="input_time_attendance">Entrada: %s</string>
+    <string name="exit_time">Saída: %s</string>
+    <string name="form_of_payment">Forma de pagamento: %s</string>
+    <string name="amount_paid">Valor pago: %s</string>
+    <string name="discount_benefit">Benefício de desconto: %s</string>
+    <string name="amount_discount_details">Valor total: %s</string>
+    <string name="partial_amount">Valor parcial: %s</string>
+</resources>

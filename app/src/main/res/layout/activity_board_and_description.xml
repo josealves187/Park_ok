@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activities.BoardAndDescriptionActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_board_description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/tv_vehicle_plate"
+                style="@style/MaterialTextViewTheme"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="18dp"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_data_client" />
+
+            <EditText
+                android:id="@+id/et_add_information"
+                style="@style/MaterialTextViewTheme"
+                android:layout_width="0dp"
+                android:gravity="top"
+                android:textAppearance="@font/quicksand_regular"
+                android:layout_height="204dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="16sp"
+                android:layout_marginEnd="36dp"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_information" />
+
+            <ImageView
+                android:id="@+id/iv_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="26dp"
+                android:src="@drawable/ic_arrow_download"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_information"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_information" />
+
+            <TextView
+                android:id="@+id/tv_name_data_client"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Informe a placa do veículo"
+                android:textColor="@color/colorNameTextView"
+                app:layout_constraintEnd_toEndOf="@+id/aciv_photo_data_client"
+                app:layout_constraintStart_toStartOf="@+id/aciv_photo_data_client"
+                app:layout_constraintTop_toBottomOf="@+id/aciv_photo_data_client" />
+
+            <TextView
+                android:id="@+id/tv_title_vehicle_license_plate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Placa do veículo"
+                android:textColor="@color/colorTextViewText"
+                app:layout_constraintBottom_toTopOf="@+id/tv_vehicle_plate"
+                app:layout_constraintStart_toStartOf="@+id/tv_vehicle_plate" />
+
+
+            <TextView
+                android:id="@+id/tv_title_vehicle_plate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Informe a placa do veículo"
+                android:textColor="@color/colorNameTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_vehicle_plate" />
+
+
+            <TextView
+                android:id="@+id/tv_title_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Descrição (Opcional)"
+                android:textColor="@color/colorNameTextView"
+                app:layout_constraintEnd_toStartOf="@+id/tv_information"
+                app:layout_constraintHorizontal_bias="0.215"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_vehicle_plate" />
+
+            <TextView
+                android:id="@+id/tv_information"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_marginRight="6dp"
+                android:text="INFORMAR"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_description"
+                app:layout_constraintEnd_toStartOf="@+id/iv_arrow"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_description" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mt_toolbar_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="Placa e descrição"
+                app:titleTextAppearance="@style/MaterialToolbarMenuStyleTheme"
+                app:titleTextColor="@color/color_toolbar" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_check_in_vehicle"
+                style="@style/MaterialButtonTheme"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="36dp"
+                android:text="REGISTRAR ENTRADA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_add_information"
+                app:strokeWidth="1dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/aciv_photo_data_client"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/ic_bord_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mt_toolbar_details" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

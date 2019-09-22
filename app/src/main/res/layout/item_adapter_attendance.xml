@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/mcv_attendance"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="24dp"
+    app:cardElevation="5dp"
+    style="@style/MaterialCardViewTheme"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/iv_card_attendance"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_change" />
+
+        <ImageView
+            android:id="@+id/iv_board"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/board"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_card_attendance" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@color/colorTextViewText"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_card_attendance"
+            app:layout_constraintTop_toTopOf="@id/iv_card_attendance"
+            tools:text="Marcelo" />
+
+        <TextView
+            android:id="@+id/tv_cpf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/quicksand_light"
+            android:textColor="@color/colorTextViewText"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            tools:text="123.***.***-**" />
+
+        <TextView
+            android:id="@+id/tv_change"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/tv_change_adapter_attendance"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@color/colorTextButton"
+            android:textStyle="bold"
+            android:textSize="10dp"
+            android:layout_marginRight="26dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginTop="26dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_board_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@color/colorTextViewText"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_board"
+            app:layout_constraintTop_toTopOf="@id/iv_board"
+            tools:text="PZO - 5879" />
+
+        <TextView
+            android:id="@+id/tv_Input_adapter_attendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/quicksand_light"
+            android:textColor="@color/colorTextViewText"
+            android:textStyle="bold"
+            android:text="Entrada: 08:56"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_board"/>
+
+        <TextView
+            android:id="@+id/tv_partial_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_light"
+            android:textColor="@color/colorTextViewText"
+            android:textStyle="bold"
+            android:text="Valor parcial: R$ 15,00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_Input_adapter_attendance"
+            app:layout_constraintTop_toTopOf="@+id/tv_Input_adapter_attendance"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_end_servicer"
+            style="@style/MaterialBottonStyleTheme"
+            android:text="SAÍDA SEM QR-CODE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_Input_adapter_attendance"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

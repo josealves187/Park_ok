@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activities.VehicleTypeActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Selecione abaixo o tipo do veículo"
+                android:textColor="@color/colorNameTextViewTypeOfStay"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/cm_car_vehicle"
+                app:layout_constraintStart_toStartOf="@+id/cm_car_vehicle"
+                app:layout_constraintTop_toBottomOf="@+id/mt_toolbar_vehicle_type" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mt_toolbar_vehicle_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="@string/title_toolbar_type_vehicle"
+                app:titleTextAppearance="@style/MaterialToolbarMenuStyleTheme"
+                app:titleTextColor="@color/color_toolbar" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cm_car_vehicle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_title_ou"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:strokeColor="@color/colorStrokeCardView"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_title_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="CARRO"
+                        android:textColor="@color/colorTextViewText"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/aciv_car_type"
+                        app:layout_constraintEnd_toStartOf="@+id/aciv_entrs_car"
+                        app:layout_constraintStart_toEndOf="@+id/aciv_car_type"
+                        app:layout_constraintTop_toTopOf="@id/aciv_car_type" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_car_type"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_card"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_title_car"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_entrs_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_indication"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_title_car"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_car"
+                        app:layout_constraintTop_toTopOf="@+id/tv_title_car" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cm_motorcycle_vehicle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="30dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_title_ou"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cm_car_vehicle"
+                app:strokeColor="@color/colorStrokeCardView"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_motorcycle_vehicle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="MOTO"
+                        android:textColor="@color/colorTextViewText"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/aciv_motorcycle_vehicle"
+                        app:layout_constraintEnd_toStartOf="@+id/aciv_entrs_motorcycle_vehicle"
+                        app:layout_constraintStart_toEndOf="@+id/aciv_motorcycle_vehicle"
+                        app:layout_constraintTop_toTopOf="@id/aciv_motorcycle_vehicle" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_motorcycle_vehicle"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_motorcycle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_motorcycle_vehicle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_entrs_motorcycle_vehicle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_indication"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_motorcycle_vehicle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_motorcycle_vehicle"
+                        app:layout_constraintTop_toTopOf="@+id/tv_motorcycle_vehicle" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cm_big_car_vehicle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="30dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_title_ou"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cm_motorcycle_vehicle"
+                app:strokeColor="@color/colorStrokeCardView"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_title_big_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="CARRO GRANDE"
+                        android:textColor="@color/colorTextViewText"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/aciv_big_car_type"
+                        app:layout_constraintEnd_toStartOf="@+id/aciv_car_entrs"
+                        app:layout_constraintStart_toEndOf="@+id/aciv_big_car_type"
+                        app:layout_constraintTop_toTopOf="@id/aciv_big_car_type" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_big_car_type"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_bigcar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_title_big_car"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_car_entrs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_indication"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_title_big_car"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_big_car"
+                        app:layout_constraintTop_toTopOf="@+id/tv_title_big_car" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cm_vehicle_x"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="30dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_title_ou"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cm_big_car_vehicle"
+                app:strokeColor="@color/colorStrokeCardView"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_title_vehicle_x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="VEÍCULO X"
+                        android:textColor="@color/colorTextViewText"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/aciv_vehicle_x"
+                        app:layout_constraintEnd_toStartOf="@+id/aciv_vehicle_x_entrs"
+                        app:layout_constraintStart_toEndOf="@+id/aciv_vehicle_x"
+                        app:layout_constraintTop_toTopOf="@id/aciv_vehicle_x" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_vehicle_x"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_bigcar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_title_vehicle_x"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_vehicle_x_entrs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_indication"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_title_vehicle_x"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_vehicle_x"
+                        app:layout_constraintTop_toTopOf="@+id/tv_title_vehicle_x" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cm_vehicle_y"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="30dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_title_ou"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cm_vehicle_x"
+                app:strokeColor="@color/colorStrokeCardView"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_title_vehicle_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="VEÍCULO "
+                        android:textColor="@color/colorTextViewText"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/actv_vehicle_y"
+                        app:layout_constraintEnd_toStartOf="@+id/aciv_vehicle_y_entrs"
+                        app:layout_constraintStart_toEndOf="@+id/actv_vehicle_y"
+                        app:layout_constraintTop_toTopOf="@id/actv_vehicle_y" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/actv_vehicle_y"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_bigcar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_title_vehicle_y"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_vehicle_y_entrs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_indication"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_title_vehicle_y"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_vehicle_y"
+                        app:layout_constraintTop_toTopOf="@+id/tv_title_vehicle_y" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

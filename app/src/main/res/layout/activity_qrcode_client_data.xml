@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activities.QRcode.QrcodeClientDataActivity">
+
+
+    <TextView
+        android:id="@+id/tv_name_data_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="Marcelo"
+        android:textColor="@color/colorNameTextView"
+        app:layout_constraintEnd_toEndOf="@+id/aciv_photo_data_client"
+        app:layout_constraintStart_toStartOf="@+id/aciv_photo_data_client"
+        app:layout_constraintTop_toBottomOf="@+id/aciv_photo_data_client" />
+
+    <TextView
+        android:id="@+id/tv_cpf_data_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_light"
+        android:text="123.***.***-**"
+        android:textColor="@color/colorNameTextView"
+        app:layout_constraintEnd_toEndOf="@+id/tv_name_data_client"
+        app:layout_constraintStart_toStartOf="@+id/tv_name_data_client"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_data_client" />
+
+    <TextView
+        android:id="@+id/tv_title_select_procedure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Selecione o procedimento"
+        android:textColor="@color/colorNameTextView"
+        app:layout_constraintBottom_toTopOf="@+id/cm_resgister_entry_data_client"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cpf_data_client" />
+
+
+    <TextView
+        android:id="@+id/tv_title_ou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_light"
+        android:text="OU"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/colorNameTextView"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/cm_bonus_customer"
+        app:layout_constraintEnd_toEndOf="@+id/cm_bonus_customer"
+        app:layout_constraintStart_toStartOf="@+id/cm_bonus_customer" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/mt_toolbar_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/title_toolbar_details"
+        app:titleTextAppearance="@style/MaterialToolbarMenuStyleTheme"
+        app:titleTextColor="@color/color_toolbar" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cm_bonus_customer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="60dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/colorStrokeCardView"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_title_qrcode_data_client"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="BONIFICAR CLIENTE"
+                android:textColor="@color/colorTextViewText"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/aciv_qrcode"
+                app:layout_constraintEnd_toStartOf="@+id/aciv_entry"
+                app:layout_constraintStart_toEndOf="@+id/aciv_qrcode"
+                app:layout_constraintTop_toTopOf="@id/aciv_qrcode" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aciv_qrcode"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_gift"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_title_qrcode_data_client"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aciv_entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_indication"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_qrcode_data_client"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_title_qrcode_data_client"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_qrcode_data_client" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cm_resgister_entry_data_client"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_title_ou"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/colorStrokeCardView"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_title_register_data_client"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="REGISTRAR ENTRADA"
+                android:textColor="@color/colorTextViewText"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/aciv_qrcodes"
+                app:layout_constraintEnd_toStartOf="@+id/aciv_entrs"
+                app:layout_constraintStart_toEndOf="@+id/aciv_qrcodes"
+                app:layout_constraintTop_toTopOf="@id/aciv_qrcodes" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aciv_qrcodes"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_register_data_client"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_title_register_data_client"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aciv_entrs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_indication"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_register_data_client"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_title_register_data_client"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_register_data_client" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/aciv_photo_data_client"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mt_toolbar_details" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
