@@ -3,26 +3,26 @@ package com.jose.park_ok_colaborador.view.activities;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
-import android.widget.Toolbar;
+import android.widget.Switch;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
 import com.jose.park_ok_colaborador.R;
-import com.jose.park_ok_colaborador.view.activities.QRcode.QRCodeReaderExitActivity;
 import com.jose.park_ok_colaborador.view.activities.QRcode.QrcodeClientDataActivity;
 import com.jose.park_ok_colaborador.view.adapters.HomeViewPagerAdapter;
+import com.jose.park_ok_colaborador.view.fragments.AttendanceFragment;
+import com.jose.park_ok_colaborador.view.fragments.InputFragment;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView mbnvMenu;
     private ViewPager mVpContent;
+    private boolean auxQrcode = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,6 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         mbnvMenu.setOnNavigationItemSelectedListener(this);
 
         initViewPager();
-
 
     }
 
@@ -56,8 +55,6 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.nav_profile:
                 mVpContent.setCurrentItem(3,false);
                 return true;
-
-
         }
 
         return false;
@@ -67,21 +64,53 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         mVpContent.setAdapter(new HomeViewPagerAdapter(getSupportFragmentManager()));
         mVpContent.setCurrentItem(0,false);
 
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (true){
-            Intent intent = new Intent(HomeActivity.this,QrcodeClientDataActivity.class);
+        auxQrcode = !auxQrcode;
+
+        if (auxQrcode) {
+            Intent intent = new Intent(HomeActivity.this, QrcodeClientDataActivity.class);
             startActivity(intent);
-        }else {
-            Intent i = new Intent(HomeActivity.this, QRCodeReaderExitActivity.class);
+
+        } else {
+            Intent i = new Intent(HomeActivity.this, ReportPlateActivity.class);
             startActivity(i);
+        }
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        SharedPreferences preferences = getSharedPreferences("PARKOK", MODE_PRIVATE);
+        int screenOrigin = preferences.getInt("SCREEN_ORIGEN",0);
+
+        switch (screenOrigin ){
+            case 1 :
+                mVpContent.setCurrentItem(0,false);
+                break;
+
+            case 2:
+                mVpContent.setCurrentItem(1,false);
+               break;
+
+            case 3:
+                mVpContent.setCurrentItem(2,false);
+                break;
+
+            case 4:
+                mVpContent.setCurrentItem(3,false);
+                break;
+
 
         }
+
+
 
     }
 }

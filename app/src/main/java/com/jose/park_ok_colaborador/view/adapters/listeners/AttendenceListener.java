@@ -4,4 +4,5 @@ import com.jose.park_ok_colaborador.commom.Attendence;
 
 public interface AttendenceListener {
     public void attendanceOnClick (Attendence attendence, int position);
+    public void attendanceOnClickSemQR (Attendence attendence, int position);
 }

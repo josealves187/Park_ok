@@ -4,11 +4,14 @@
         android:drawable="@color/colorFundBotton">
     </item>
 
+
+
     <item>
         <rotate
             android:fromDegrees="60"
-            android:pivotX="9%"
-            android:pivotY="88%"
+            android:pivotX="10%"
+            android:pivotY="80%"
+
             >
             <shape
 
@@ -17,6 +20,9 @@
 
             </shape>
         </rotate>
+
     </item>
+
+
 
 </layer-list>

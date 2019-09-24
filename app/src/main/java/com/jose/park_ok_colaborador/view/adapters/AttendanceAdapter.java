@@ -18,7 +18,6 @@ import com.jose.park_ok_colaborador.view.adapters.listeners.AttendenceListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.provider.Settings.System.getString;
 import static com.jose.park_ok_colaborador.utils.Utils.formatCurrency;
 import static com.jose.park_ok_colaborador.utils.Utils.timeFormat;
 
@@ -52,7 +51,6 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
 
     /**
      * manipulaçao dos dados para serem mostrados nos itens das listagen
-     *
      */
     @Override
     public void onBindViewHolder(@NonNull AttendanceAdapter.AttendanceViewHolder holder, final int position) {
@@ -61,13 +59,13 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
             case 1:
                 holder.ivCardAttendance.setImageResource(R.drawable.ic_card);
                 holder.tvPartialAmount.setText(context.getString(R.string.
-                        partial_amount,formatCurrency(context,attendenceList.get(position).getValue())));
+                        partial_amount, formatCurrency(context, attendenceList.get(position).getValue())));
                 break;
 
             case 2:
                 holder.ivBoard.setImageResource(R.drawable.board);
                 holder.tvPartialAmount.setText(context.getString(R.string.
-                        partial_amount,formatCurrency(context,attendenceList.get(position).getValue())));
+                        partial_amount, formatCurrency(context, attendenceList.get(position).getValue())));
                 break;
 
             case 3:
@@ -83,13 +81,13 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
             case 4:
                 holder.ivCardAttendance.setImageResource(R.drawable.ic_motorcycle);
                 holder.tvPartialAmount.setText(context.getString(R.string.
-                        partial_amount,formatCurrency(context,attendenceList.get(position).getValue())));
+                        partial_amount, formatCurrency(context, attendenceList.get(position).getValue())));
                 break;
 
             case 5:
                 holder.ivCardAttendance.setImageResource(R.drawable.ic_bigcar);
                 holder.tvPartialAmount.setText(context.getString(R.string.
-                        partial_amount,formatCurrency(context,attendenceList.get(position).getValue())));
+                        partial_amount, formatCurrency(context, attendenceList.get(position).getValue())));
                 break;
         }
 
@@ -97,40 +95,47 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
         holder.tvCpf.setText(String.valueOf(attendenceList.get(position).getCpf()));
         holder.tvBoardCard.setText(String.valueOf(attendenceList.get(position).getNumberBoard()));
         holder.tvInputAdapterAttendance.setText(context.getString(R.string.input_time_attendance,
-                timeFormat(attendenceList.get(position).getDateHour(),context)));
+                timeFormat(attendenceList.get(position).getDateHour(), context)));
 
-
-        switch (attendenceList.get(position).getTypeAttendance()){
+        switch (attendenceList.get(position).getTypeAttendance()) {
             case 1:
                 holder.endService.setText("SAÍDA SEM QR-CODE");
-
+                callingOnCliSemQRcode(holder, position);
                 break;
             case 2:
                 holder.endService.setText("FINALIZA ATENDIMENTO");
+                callingOnClick(holder, position);
                 break;
             case 3:
                 holder.endService.setText("CANCELAR");
-                break;
-            case 4:
-                holder.endService.setText("FINALIZA ATENDIMENTO");
-                break;
-            case 5:
-                holder.endService.setText("FINALIZA ATENDIMENTO");
+                callingOnClick(holder, position);
                 break;
         }
-        holder.endService.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                attendenceListener.attendanceOnClick(attendenceList.get(position),position);
-            }
-        });
 
     }
 
+    private void callingOnClick(@NonNull AttendanceViewHolder holder, final int position) {
+        holder.endService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                attendenceListener.attendanceOnClick(attendenceList.get(position), position);
+            }
+        });
+    }
+
+    private void callingOnCliSemQRcode(@NonNull AttendanceViewHolder holder, final int position) {
+        holder.endService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                attendenceListener.attendanceOnClickSemQR(attendenceList.get(position), position);
+            }
+        });
+    }
+
     /***
-    * retornando o tamanho da lista
-    *
-    */
+     * retornando o tamanho da lista
+     *
+     */
     @Override
     public int getItemCount() {
         return attendenceList.size();
@@ -149,8 +154,8 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
         TextView tvPartialAmount;
 
         /**
-        **classe faz referência aos id dos componentes da minha view
-        */
+         * *classe faz referência aos id dos componentes da minha view
+         */
         public AttendanceViewHolder(@NonNull View itemView) {
             super(itemView);
             ivCardAttendance = itemView.findViewById(R.id.iv_card_attendance);

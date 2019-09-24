@@ -3,12 +3,14 @@ package com.jose.park_ok_colaborador.view.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.jose.park_ok_colaborador.R;
 import com.jose.park_ok_colaborador.commom.Historic;
 
@@ -39,23 +41,19 @@ public class DiscountDetailsActivity extends AppCompatActivity {
     private TextView tvExitDetails;
     private TextView tvPaymentMethod;
     private TextView tvAmount;
-    private TextView tvdiscountAmount;
+    private TextView tvDiscountAmount;
     private TextView tvTotalDiscount;
+    private MaterialToolbar mtToolbarDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discount_details);
-
-        //ADD Toobar
-        Toolbar toolbar = findViewById(R.id.mt_toolbar_details);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initViews();
+        setSupportActionBar(mtToolbarDetails);
 
         Bundle extras = getIntent().getExtras();
         Historic historic = extras.getParcelable(HISTORIC);
-
 
 
         if (historic != null) {
@@ -80,7 +78,7 @@ public class DiscountDetailsActivity extends AppCompatActivity {
         }
 
         if (historic.getTypeService()==1){
-            tvdiscountAmount.setText(getString(R.string.amount_discount_details, formatCurrency(this, historic.getAmount())));
+            tvDiscountAmount.setText(getString(R.string.amount_discount_details, formatCurrency(this, historic.getAmount())));
             ivDiscountBenefit.setImageResource(R.drawable.ic_discount_benefit);
             tvTotalDiscount.setText(getString(R.string.discount_benefit, formatCurrency(this, historic.getDiscountAmount())));
 
@@ -89,32 +87,36 @@ public class DiscountDetailsActivity extends AppCompatActivity {
             ivDiscountBenefit.setImageResource(R.drawable.ic_gift);
             tvTotalDiscount.setVisibility(View.VISIBLE);
             tvTotalDiscount.setText("Benefício de tempo: + 10 minutos");
-
         }
 
-
+        mtToolbarDetails.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+                SharedPreferences.Editor editor = getSharedPreferences("PARKOK", MODE_PRIVATE).edit();
+                editor.putInt("SCREEN_ORIGEN", 3);
+                editor.commit();
+            }
+        });
     }
 
     private void initViews() {
-
-        cimPhotoUserDetais =  findViewById(R.id.aciv_photo_user_detais);
+        tvAmount =  findViewById(R.id.tv_amount); //Valor pago: amount_paid
+        ivAmountPaidDetails =  findViewById(R.id.iv_amount_paid_details);
+        tvBoardUserDetails =  findViewById(R.id.tv_board_user_details);
         ivDetailsCard =  findViewById(R.id.iv_details_card);
         ivDetailsBoard =  findViewById(R.id.iv_details_board);
         ivDetailsTime =  findViewById(R.id.iv_details_time);
-        ivAmountPaidDetails =  findViewById(R.id.iv_amount_paid_details);
+        tvDiscountAmount = findViewById(R.id.tv_total_amount_benefit); // Benefício de desconto:
         ivDiscountBenefit =  findViewById(R.id.iv_discount_benefit);
-        tvNameUserDetails =  findViewById(R.id.tv_name_user_details);
         tvDetailsCpf =  findViewById(R.id.tv_details_cpf);
-        tvBoardUserDetails =  findViewById(R.id.tv_board_user_details);
+        tvExitDetails =  findViewById(R.id.tv_exit_details);
         tvHoursmanDetails =  findViewById(R.id.tv_Hoursman_details);
         tvInputDetails =  findViewById(R.id.tv_input_details);
-        tvExitDetails =  findViewById(R.id.tv_exit_details);
-
+        tvNameUserDetails =  findViewById(R.id.tv_name_user_details);
         tvPaymentMethod =  findViewById(R.id.tv_payment_method); //Forma de pagamento: form_of_payment
-        tvdiscountAmount = findViewById(R.id.tv_total_amount_benefit); // Benefício de desconto:
-        tvAmount =  findViewById(R.id.tv_amount); //Valor pago: amount_paid
+        cimPhotoUserDetais =  findViewById(R.id.aciv_photo_user_detais);
         tvTotalDiscount = findViewById(R.id.tv_total_discount); //desconto  amount
-
-
+        mtToolbarDetails = findViewById(R.id.mt_toolbar_details);
     }
 }

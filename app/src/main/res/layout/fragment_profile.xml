@@ -52,19 +52,19 @@
                 app:layout_constraintTop_toTopOf="@+id/aciv_i_about_profile" />
 
             <TextView
-                android:id="@+id/tv_title_usage_policies_profile"
+                android:id="@+id/tv_title_policies_profile"
                 style="@style/MaterialTexteViewTheme"
                 android:layout_width="340dp"
-                android:text="Políticas de uso"
+                android:text="Políticas de Privacidade"
                 app:layout_constraintBottom_toBottomOf="@+id/aciv_i_usage_policies_profile"
                 app:layout_constraintStart_toEndOf="@+id/aciv_i_usage_policies_profile"
                 app:layout_constraintTop_toTopOf="@+id/aciv_i_usage_policies_profile" />
 
             <TextView
-                android:id="@+id/tv_title_privacy_terms_profile"
+                android:id="@+id/tv_title_use_terms_profile"
                 style="@style/MaterialTexteViewTheme"
                 android:layout_width="340dp"
-                android:text="Termos de privacidade"
+                android:text="Termos de uso"
                 app:layout_constraintBottom_toBottomOf="@+id/aciv_i_privacy_terms_profile"
                 app:layout_constraintStart_toEndOf="@+id/aciv_i_privacy_terms_profile"
                 app:layout_constraintTop_toTopOf="@+id/aciv_i_privacy_terms_profile" />
@@ -114,7 +114,7 @@
                 android:background="#B9B9B9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title_usage_policies_profile" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_policies_profile" />
 
 
             <View
@@ -123,7 +123,7 @@
                 android:background="#B9B9B9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title_privacy_terms_profile" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_use_terms_profile" />
 
             <View
                 style="@style/MaterialViewStyleTheme"
@@ -214,9 +214,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="26dp"
                 android:src="@drawable/ic_arrow_indication"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_title_usage_policies_profile"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_policies_profile"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_title_usage_policies_profile" />
+                app:layout_constraintTop_toTopOf="@+id/tv_title_policies_profile" />
 
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -235,9 +235,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="26dp"
                 android:src="@drawable/ic_arrow_indication"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_title_privacy_terms_profile"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_use_terms_profile"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_title_privacy_terms_profile" />
+                app:layout_constraintTop_toTopOf="@+id/tv_title_use_terms_profile" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/aciv_i_exit_profile"

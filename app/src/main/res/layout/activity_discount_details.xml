@@ -26,13 +26,14 @@
                 android:id="@+id/mt_toolbar_details"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                app:titleTextAppearance="@style/MaterialToolbarMenuStyleTheme"
+                app:titleTextColor="@color/color_toolbar"
+                app:title="@string/title_toolbar_details"
+                app:navigationIcon="@drawable/ic_arrow"
                 android:elevation="1dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:title="@string/title_toolbar_details"
-                app:titleTextAppearance="@style/MaterialToolbarMenuStyleTheme"
-                app:titleTextColor="@color/color_toolbar" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
 
             <de.hdodenhof.circleimageview.CircleImageView

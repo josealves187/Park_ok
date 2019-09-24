@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activities.BonusCustomerActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/mt_toolbar_bonus_customer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/title_toolbar_bonus_customer"
+        app:titleTextAppearance="@style/MaterialToolbarMenuStyleTheme"
+        app:titleTextColor="@color/color_toolbar" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/aciv_photo_bonus_customer_client"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mt_toolbar_bonus_customer" />
+
+    <TextView
+        android:id="@+id/tv_name_bonus_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="Marcelo"
+        android:textColor="@color/colorNameTextView"
+        app:layout_constraintEnd_toEndOf="@+id/aciv_photo_bonus_customer_client"
+        app:layout_constraintStart_toStartOf="@+id/aciv_photo_bonus_customer_client"
+        app:layout_constraintTop_toBottomOf="@+id/aciv_photo_bonus_customer_client" />
+
+    <TextView
+        android:id="@+id/tv_cpf_bonus_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_light"
+        android:text="123.***.***-**"
+        android:textColor="@color/colorNameTextView"
+        app:layout_constraintEnd_toEndOf="@+id/tv_name_bonus_customer"
+        app:layout_constraintStart_toStartOf="@+id/tv_name_bonus_customer"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_bonus_customer" />
+
+    <EditText
+        android:id="@+id/tv_value_bonus_customer"
+        style="@style/MaterialTextViewTheme"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="textPersonName"
+        android:hint="R$ 0,00"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cpf_bonus_customer" />
+
+    <TextView
+        android:id="@+id/tv_title_bonus_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginBottom="18dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="@string/title_Inform_the_board"
+        android:textColor="@color/colorNameTextView"
+        app:layout_constraintBottom_toTopOf="@+id/tv_value_bonus_customer"
+        app:layout_constraintStart_toStartOf="@+id/tv_value_bonus_customer" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_report_plate"
+        style="@style/MaterialButtonTheme"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bnt_out_bonus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_value_bonus_customer"
+        app:layout_constraintVertical_bias="0.950"
+        app:strokeWidth="1dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -109,7 +109,7 @@
                 android:id="@+id/tv_title_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="50dp"
                 android:fontFamily="@font/quicksand_regular"
                 android:text="Descrição (Opcional)"
                 android:textColor="@color/colorNameTextView"

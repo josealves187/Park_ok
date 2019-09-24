@@ -66,16 +66,17 @@
         app:layout_constraintStart_toStartOf="@+id/btn_registe" />
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/mt_toolbar_details"
+        android:id="@+id/mt_toolbar_data_registrion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_arrow"
         android:elevation="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:title="@string/title_toolbar_registratio_data"
         app:titleTextAppearance="@style/MaterialToolbarMenuStyleTheme"
-        app:titleTextColor="@color/color_toolbar" />
+        app:titleTextColor="@color/color_toolbar" 
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         style="@style/MaterialEditTextTheme"
@@ -98,5 +99,5 @@
         android:src="@drawable/profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mt_toolbar_details" />
+        app:layout_constraintTop_toBottomOf="@+id/mt_toolbar_data_registrion" />
 </androidx.constraintlayout.widget.ConstraintLayout>

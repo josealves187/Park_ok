@@ -52,20 +52,20 @@ public class InputFragment extends Fragment {
             public void onClick(View v) {
                 IntentIntegrator intentIntegrator = new IntentIntegrator((Activity) getContext());
                 intentIntegrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE );
+                intentIntegrator.setPrompt(" ");
                 intentIntegrator.setCameraId(0);
-                intentIntegrator.setPrompt("");
                 IntentIntegrator.forSupportFragment(InputFragment.this).initiateScan();
 
             }
         });
     }
 
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//                Intent intent = new Intent(getContext(),QrcodeClientDataActivity.class);
-//                startActivity(intent);
-//    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+                Intent intent = new Intent(getContext(),QrcodeClientDataActivity.class);
+                startActivity(intent);
+    }
 
 
 
