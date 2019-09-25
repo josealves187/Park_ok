@@ -9,8 +9,6 @@
     tools:context=".view.activities.SplashScreenActivity">
 
 
-
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
@@ -22,16 +20,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background_splash" />
 
-
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="270dp"
+        android:layout_height="240dp"
         android:background="@drawable/photo_card_splash"
-        app:layout_constraintBottom_toTopOf="@id/imageView3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView3"

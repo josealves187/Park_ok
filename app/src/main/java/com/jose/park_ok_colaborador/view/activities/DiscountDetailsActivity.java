@@ -1,7 +1,6 @@
 package com.jose.park_ok_colaborador.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,9 +15,9 @@ import com.jose.park_ok_colaborador.commom.Historic;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static com.jose.park_ok_colaborador.utils.Constants.FORMOFPAYMENTCARD;
-import static com.jose.park_ok_colaborador.utils.Constants.FORMOFPAYMENTAMOUNT;
-import static com.jose.park_ok_colaborador.utils.Constants.FORMOFPAYMENTAPP;
+import static com.jose.park_ok_colaborador.utils.Constants.FORM_OF_PAYMENT_CARD;
+import static com.jose.park_ok_colaborador.utils.Constants.FORM_OF_PAYMENT_AMOUNT;
+import static com.jose.park_ok_colaborador.utils.Constants.FORM_OF_PAYMENT_APP;
 import static com.jose.park_ok_colaborador.utils.Constants.HISTORIC;
 import static com.jose.park_ok_colaborador.utils.Utils.formatCurrency;
 import static com.jose.park_ok_colaborador.utils.Utils.timeFormat;
@@ -67,13 +66,13 @@ public class DiscountDetailsActivity extends AppCompatActivity {
             tvBoardUserDetails.setText(historic.getBoad());
             switch (historic.getFormOfPayment()) {
                 case 1:
-                    tvPaymentMethod.setText(getString(R.string.form_of_payment, FORMOFPAYMENTAPP));
+                    tvPaymentMethod.setText(getString(R.string.form_of_payment, FORM_OF_PAYMENT_APP));
                     break;
                 case 2:
-                    tvPaymentMethod.setText(getString(R.string.form_of_payment, FORMOFPAYMENTAMOUNT));
+                    tvPaymentMethod.setText(getString(R.string.form_of_payment, FORM_OF_PAYMENT_AMOUNT));
                     break;
                 case 3:
-                    tvPaymentMethod.setText(getString(R.string.form_of_payment, FORMOFPAYMENTCARD));
+                    tvPaymentMethod.setText(getString(R.string.form_of_payment, FORM_OF_PAYMENT_CARD));
             }
         }
 

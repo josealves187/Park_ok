@@ -26,6 +26,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.jose.park_ok_colaborador.utils.Constants.ATTENDENCE;
+
 public class AttendanceFragment extends Fragment implements AttendenceListener {
 
     private RecyclerView rvCalls;
@@ -43,14 +45,14 @@ public class AttendanceFragment extends Fragment implements AttendenceListener {
 
         rvCalls = view.findViewById(R.id.rv_calls);
         List<Attendence> attendences = new ArrayList<>();
-        attendences.add(new Attendence(1,1231231232,"joão",1, 122333,new Date(),1.1,1));
-        attendences.add(new Attendence(2,1231231232,"joão",2, 122333,new Date(),1.1,2));
-        attendences.add(new Attendence(3,1231231232,"joão",3, 122333,new Date(),1.1,3));
-        attendences.add(new Attendence(4,1231231232,"joão",1, 122333,new Date(),1.1,4));
-        attendences.add(new Attendence(5,1231231232,"joão",2, 122333,new Date(),1.1,4));
-        attendences.add(new Attendence(6,1231231232,"joão",3, 122333,new Date(),1.1,3));
-        attendences.add(new Attendence(7,1231231232,"joão",1, 122333,new Date(),1.1,2));
-        attendences.add(new Attendence(8,1231231232,"joão",2, 122333,new Date(),1.1,1));
+        attendences.add(new Attendence(1,1231231232,"joão",1, 122333,new Date(),new Date(),18,1,17,1));
+        attendences.add(new Attendence(2,1231231232,"joão",2, 122333,new Date(),new Date(),19,2,17,2));
+        attendences.add(new Attendence(3,1231231232,"joão",3, 122333,new Date(),new Date(),15,3,12,3));
+        attendences.add(new Attendence(4,1231231232,"joão",1, 122333,new Date(),new Date(),14,4,10,4));
+        attendences.add(new Attendence(5,1231231232,"joão",2, 122333,new Date(),new Date(),12,6,6,1));
+        attendences.add(new Attendence(6,1231231232,"joão",3, 122333,new Date(),new Date(),12,8,4,2));
+        attendences.add(new Attendence(7,1231231232,"joão",1, 122333,new Date(),new Date(),12,2,10,3));
+        attendences.add(new Attendence(8,1231231232,"joão",2, 122333,new Date(),new Date(),12,2,10,4));
         rvCalls.setLayoutManager(new LinearLayoutManager(getContext()));
         rvCalls.setAdapter(new AttendanceAdapter(attendences, getContext(),this));
 
@@ -74,8 +76,8 @@ public class AttendanceFragment extends Fragment implements AttendenceListener {
     @Override
     public void attendanceOnClickSemQR(Attendence attendence, int position) {
         Intent i = new Intent(getActivity(), ReportPlateActivity.class);
+        i.putExtra(ATTENDENCE,attendence);
         startActivity(i);
-
 
     }
 

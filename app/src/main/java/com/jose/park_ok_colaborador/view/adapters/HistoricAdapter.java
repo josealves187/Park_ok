@@ -1,7 +1,6 @@
 package com.jose.park_ok_colaborador.view.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +17,9 @@ import com.jose.park_ok_colaborador.view.adapters.listeners.HistoricLIstener;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.jose.park_ok_colaborador.utils.Constants.FORMOFPAYMENTAMOUNT;
-import static com.jose.park_ok_colaborador.utils.Constants.FORMOFPAYMENTAPP;
-import static com.jose.park_ok_colaborador.utils.Constants.FORMOFPAYMENTCARD;
+import static com.jose.park_ok_colaborador.utils.Constants.FORM_OF_PAYMENT_AMOUNT;
+import static com.jose.park_ok_colaborador.utils.Constants.FORM_OF_PAYMENT_APP;
+import static com.jose.park_ok_colaborador.utils.Constants.FORM_OF_PAYMENT_CARD;
 import static com.jose.park_ok_colaborador.utils.Utils.formatCurrency;
 import static com.jose.park_ok_colaborador.utils.Utils.getDayAndMonth;
 import static com.jose.park_ok_colaborador.utils.Utils.timeFormat;
@@ -72,13 +71,13 @@ public class HistoricAdapter extends RecyclerView.Adapter<HistoricAdapter.Histor
 
         switch (historics.get(position).getFormOfPayment()){
             case 1 :
-                holder.tvTypeOfPayment.setText(FORMOFPAYMENTAPP);
+                holder.tvTypeOfPayment.setText(FORM_OF_PAYMENT_APP);
                 break;
             case 2:
-                holder.tvTypeOfPayment.setText(FORMOFPAYMENTAMOUNT);
+                holder.tvTypeOfPayment.setText(FORM_OF_PAYMENT_AMOUNT);
                 break;
             case 3:
-                holder.tvTypeOfPayment.setText(FORMOFPAYMENTCARD);
+                holder.tvTypeOfPayment.setText(FORM_OF_PAYMENT_CARD);
         }
         holder.tvPastingHistory.setOnClickListener(new View.OnClickListener() {
             @Override

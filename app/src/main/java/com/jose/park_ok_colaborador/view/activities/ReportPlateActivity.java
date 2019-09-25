@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.jose.park_ok_colaborador.R;
+import com.jose.park_ok_colaborador.commom.Attendence;
+
+import static com.jose.park_ok_colaborador.utils.Constants.ATTENDENCE;
 
 public class ReportPlateActivity extends AppCompatActivity {
 
@@ -20,8 +23,13 @@ public class ReportPlateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_plate);
-        initcomponents();
+
+        //inicializar componente
+        initializecomponents();
         setSupportActionBar(mtToolbarDetails);
+
+        Bundle extras = getIntent().getExtras();
+        final Attendence attendence = extras.getParcelable(ATTENDENCE);
 
         mtToolbarDetails.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,12 +45,13 @@ public class ReportPlateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ReportPlateActivity.this, BonusCustomerActivity.class);
+                intent.putExtra(ATTENDENCE,attendence);
                 startActivity(intent);
             }
         });
     }
 
-    private void initcomponents() {
+    private void initializecomponents() {
         mtToolbarDetails = findViewById(R.id.mt_toolbar_details);
         btnReportPlate = findViewById(R.id.btn_report_plate);
     }

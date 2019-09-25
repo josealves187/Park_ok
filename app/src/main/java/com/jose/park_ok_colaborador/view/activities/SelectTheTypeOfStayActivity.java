@@ -14,7 +14,7 @@ import com.jose.park_ok_colaborador.R;
 public class SelectTheTypeOfStayActivity extends AppCompatActivity {
 
     private Dialog dialog;
-    private MaterialButton ok;
+    private MaterialButton confirmationIput;
     private CardView cmCarVehicle;
 
     @Override
@@ -22,7 +22,9 @@ public class SelectTheTypeOfStayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_the_type_of_stay);
 
-        cmCarVehicle = findViewById(R.id.cm_car_vehicle);
+        //inicializar componente
+        initializecomponents();
+
         //ADD Toobar
         Toolbar toolbar = findViewById(R.id.mt_toolbar_select_type_atay);
         setSupportActionBar(toolbar);
@@ -36,14 +38,18 @@ public class SelectTheTypeOfStayActivity extends AppCompatActivity {
         });
     }
 
+    private void initializecomponents() {
+        cmCarVehicle = findViewById(R.id.cm_car_vehicle);
+    }
+
     private void abrirDialog() {
 
         dialog = new Dialog(SelectTheTypeOfStayActivity.this);
         dialog.setContentView(R.layout.confirmation_registered_service);
-        ok = dialog.findViewById(R.id.btn_ok);
+        confirmationIput = dialog.findViewById(R.id.btn_confirmation_input);
 
 
-        ok.setOnClickListener(new View.OnClickListener() {
+        confirmationIput.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();

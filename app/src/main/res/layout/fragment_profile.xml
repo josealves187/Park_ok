@@ -43,7 +43,7 @@
                 app:layout_constraintTop_toTopOf="@+id/aciv_tutorial_and_faq_profile" />
 
             <TextView
-                android:id="@+id/tv_title_about_profile"
+                android:id="@+id/tv_title_about"
                 style="@style/MaterialTexteViewTheme"
                 android:layout_width="340dp"
                 android:text="Sobre"
@@ -102,7 +102,7 @@
                 android:background="#B9B9B9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title_about_profile" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_about" />
 
 
             <!-- 3  -->
@@ -193,9 +193,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="26dp"
                 android:src="@drawable/ic_arrow_indication"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_title_about_profile"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_about"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_title_about_profile" />
+                app:layout_constraintTop_toTopOf="@+id/tv_title_about" />
 
 
             <androidx.appcompat.widget.AppCompatImageView

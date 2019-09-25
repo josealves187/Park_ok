@@ -13,20 +13,81 @@ public class Attendence implements Parcelable {
     private int typeAttendance;
     private int numberBoard;
     private Date dateHour;
+    private Date exitAttendece;
+    private double amountPayable;
     private double value;
+    private double finalValue;
     private int typeVehicle;
 
 
     public Attendence(long id, int cpf, String nameUser, int typeAttendance,
-                      int numberBoard, Date dateHour, double value, int typeVehicle) {
+                      int numberBoard, Date dateHour,Date exitAttendece,double amountPayable, double value,double finalValue, int typeVehicle) {
         this.id = id;
         this.cpf = cpf;
         this.nameUser = nameUser;
         this.typeAttendance = typeAttendance;
         this.numberBoard = numberBoard;
         this.dateHour = dateHour;
+        this.exitAttendece = exitAttendece;
+        this.amountPayable = amountPayable;
+        this.finalValue = finalValue;
         this.value = value;
         this.typeVehicle = typeVehicle;
+    }
+
+    protected Attendence(Parcel in) {
+        id = in.readLong();
+        cpf = in.readInt();
+        nameUser = in.readString();
+        typeAttendance = in.readInt();
+        dateHour = new Date(in.readLong());
+        exitAttendece = new Date(in.readLong());
+        numberBoard = in.readInt();
+        value = in.readDouble();
+        amountPayable = in.readDouble();
+        finalValue = in.readDouble();
+        typeVehicle = in.readInt();
+    }
+
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
+        dest.writeInt(cpf);
+        dest.writeString(nameUser);
+        dest.writeInt(typeAttendance);
+        dest.writeInt(numberBoard);
+        dest.writeLong(dateHour.getTime());
+        dest.writeLong(exitAttendece.getTime());
+        dest.writeDouble(amountPayable);
+        dest.writeDouble(finalValue);
+        dest.writeDouble(value);
+        dest.writeInt(typeVehicle);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Attendence> CREATOR = new Creator<Attendence>() {
+        @Override
+        public Attendence createFromParcel(Parcel in) {
+            return new Attendence(in);
+        }
+
+        @Override
+        public Attendence[] newArray(int size) {
+            return new Attendence[size];
+        }
+    };
+
+    public double getFinalValue() {
+        return finalValue;
+    }
+
+    public void setFinalValue(double finalValue) {
+        this.finalValue = finalValue;
     }
 
     public long getId() {
@@ -77,6 +138,23 @@ public class Attendence implements Parcelable {
         this.dateHour = dateHour;
     }
 
+    public Date getExitAttendece() {
+        return exitAttendece;
+    }
+
+    public void setExitAttendece(Date exitAttendece) {
+        this.exitAttendece = exitAttendece;
+    }
+
+    public double getAmountPayable() {
+        return amountPayable;
+    }
+
+    public void setAmountPayable(double amountPayable) {
+        this.amountPayable = amountPayable;
+    }
+
+
     public double getValue() {
         return value;
     }
@@ -92,14 +170,5 @@ public class Attendence implements Parcelable {
     public void setTypeVehicle(int typeVehicle) {
         this.typeVehicle = typeVehicle;
     }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-
-    }
 }
+

@@ -17,7 +17,7 @@ public class RegistrationDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_data);
-        initcomponents();
+        initializecomponents();
 
         setSupportActionBar(mtToolbarDataRegistrion);
 
@@ -32,7 +32,7 @@ public class RegistrationDataActivity extends AppCompatActivity {
         });
     }
 
-    private void initcomponents() {
+    private void initializecomponents() {
         mtToolbarDataRegistrion = findViewById(R.id.mt_toolbar_data_registrion);
     }
 }

@@ -14,6 +14,8 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.jose.park_ok_colaborador.R;
 import com.jose.park_ok_colaborador.view.activities.BoardAndDescriptionActivity;
 
+import static com.jose.park_ok_colaborador.utils.Constants.SCREEN_ORIGEN;
+
 public class QrcodeClientDataActivity extends AppCompatActivity {
 
 
@@ -27,9 +29,9 @@ public class QrcodeClientDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrcode_client_data);
 
-        mtToolbarDetails = findViewById(R.id.mt_toolbar_details);
-        cmResgisterEntryDataClient = findViewById(R.id.cm_resgister_entry_data_client);
-        cmBonusCustomer = findViewById(R.id.cm_bonus_customer);
+        //inicializar componente
+        initializeComponent();
+
 
         setSupportActionBar(mtToolbarDetails);
 
@@ -49,14 +51,24 @@ public class QrcodeClientDataActivity extends AppCompatActivity {
             }
         });
 
+        /***
+         * redirected screen
+         * redirecionando telas Navigation da toolbar
+         * */
         mtToolbarDetails.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
                 SharedPreferences.Editor editor = getSharedPreferences("PARKOK", MODE_PRIVATE).edit();
-                editor.putInt("SCREEN_ORIGEN", 1);
+                editor.putInt(SCREEN_ORIGEN, 1);
                 editor.commit();
             }
         });
+    }
+
+    private void initializeComponent() {
+        mtToolbarDetails = findViewById(R.id.mt_toolbar_details);
+        cmResgisterEntryDataClient = findViewById(R.id.cm_resgister_entry_data_client);
+        cmBonusCustomer = findViewById(R.id.cm_bonus_customer);
     }
 }

@@ -23,7 +23,8 @@ public class VehicleTypeActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_type);
 
-        initcomponents();
+        initializecomponents();
+
         //ADD Toobar
         Toolbar toolbar = findViewById(R.id.mt_toolbar_vehicle_type);
         setSupportActionBar(toolbar);
@@ -39,7 +40,7 @@ public class VehicleTypeActivity extends AppCompatActivity implements View.OnCli
 
     }
 
-    private void initcomponents() {
+    private void initializecomponents() {
         cmCarVehicle = findViewById(R.id.cm_car_vehicle);
         cmMotorcycleVehicle = findViewById(R.id.cm_motorcycle_vehicle);
         cmBigCarVehicle = findViewById(R.id.cm_big_car_vehicle);

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activities.PaymentMethodActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="26dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tv_payment_method_amount_payable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Valor a pagar: R$ 15,00"
+                android:textColor="@color/colorNameTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mt_toolbar_payment_method" />
+
+            <TextView
+                android:id="@+id/tv_payment_method_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Desconto: R$ 2,00"
+                android:textColor="@color/colorNameTextView"
+                app:layout_constraintEnd_toEndOf="@+id/tv_payment_method_amount_payable"
+                app:layout_constraintStart_toStartOf="@+id/tv_payment_method_amount_payable"
+                app:layout_constraintTop_toBottomOf="@+id/tv_payment_method_amount_payable" />
+
+            <TextView
+                android:id="@+id/tv_payment_method_final_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Valor final: R$ 13,00"
+                android:textColor="@color/colorTextView"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_payment_method_discount" />
+
+            <TextView
+                android:id="@+id/tv_payment_method_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Selecione abaixo a forma de pagamento"
+                android:textColor="@color/colorNameTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_payment_method_final_value" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mt_toolbar_payment_method"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/ic_arrow"
+                app:title="@string/title_toolbar_payment_method"
+                app:titleTextAppearance="@style/MaterialToolbarMenuStyleTheme"
+                app:titleTextColor="@color/color_toolbar" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cm_payment_method_fur_app"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="30dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_title_ou"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_payment_method_title"
+                app:strokeColor="@color/colorStrokeCardView"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_payment_method_title_fut_app"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="PELO APP"
+                        android:textColor="@color/colorTextViewText"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/aciv_car_type"
+                        app:layout_constraintEnd_toStartOf="@+id/aciv_entrs_car"
+                        app:layout_constraintStart_toEndOf="@+id/aciv_car_type"
+                        app:layout_constraintTop_toTopOf="@id/aciv_car_type" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_car_type"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_fur_app"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_payment_method_title_fut_app"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_entrs_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_indication"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_payment_method_title_fut_app"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_payment_method_title_fut_app"
+                        app:layout_constraintTop_toTopOf="@+id/tv_payment_method_title_fut_app" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cm_payment_method_money"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="30dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_title_ou"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cm_payment_method_fur_app"
+                app:strokeColor="@color/colorStrokeCardView"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_payment_method_title_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="DINHEIRO"
+                        android:textColor="@color/colorTextViewText"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/aciv_motorcycle_vehicle"
+                        app:layout_constraintEnd_toStartOf="@+id/aciv_entrs_motorcycle_vehicle"
+                        app:layout_constraintStart_toEndOf="@+id/aciv_motorcycle_vehicle"
+                        app:layout_constraintTop_toTopOf="@id/aciv_motorcycle_vehicle" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_motorcycle_vehicle"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_money"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_payment_method_title_money"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_entrs_motorcycle_vehicle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_indication"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_payment_method_title_money"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_payment_method_title_money"
+                        app:layout_constraintTop_toTopOf="@+id/tv_payment_method_title_money" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cm_payment_method_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="30dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_title_ou"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cm_payment_method_money"
+                app:strokeColor="@color/colorStrokeCardView"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_payment_method_title_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="CARTÃO"
+                        android:textColor="@color/colorTextViewText"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/aciv_big_car_type"
+                        app:layout_constraintEnd_toStartOf="@+id/aciv_car_entrs"
+                        app:layout_constraintStart_toEndOf="@+id/aciv_big_car_type"
+                        app:layout_constraintTop_toTopOf="@id/aciv_big_car_type" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_big_car_type"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_card"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_payment_method_title_card"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aciv_car_entrs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_indication"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_payment_method_title_card"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_payment_method_title_card"
+                        app:layout_constraintTop_toTopOf="@+id/tv_payment_method_title_card" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

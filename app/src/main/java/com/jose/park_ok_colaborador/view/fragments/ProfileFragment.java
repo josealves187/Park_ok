@@ -2,7 +2,15 @@ package com.jose.park_ok_colaborador.view.fragments;
 
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +20,12 @@ import androidx.fragment.app.Fragment;
 
 import com.jose.park_ok_colaborador.R;
 import com.jose.park_ok_colaborador.view.activities.RegistrationDataActivity;
-import com.jose.park_ok_colaborador.view.activities.TermsOfUseActivity;
+import com.jose.park_ok_colaborador.view.activities.AboutTheAppActivity;
+import com.jose.park_ok_colaborador.view.activities.ThesesUsePrivacyActivity;
 import com.jose.park_ok_colaborador.view.activities.TutorialAndFAQ;
+
+import static com.jose.park_ok_colaborador.utils.Constants.TEXT_USE;
+import static com.jose.park_ok_colaborador.utils.Constants.TITLE_TOOLBAR;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,10 +54,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-
         tvRegistrationDat = view.findViewById(R.id.tv_registration_dat);
         tvTitleFaqProfile = view.findViewById(R.id.tv_title_faq_profile);
-        tvTitleAboutProfile = view.findViewById(R.id.tv_title_about_profile);
+        tvTitleAboutProfile = view.findViewById(R.id.tv_title_about);
         tvTitleUsagePoliciesProfile = view.findViewById(R.id.tv_title_policies_profile);
         tvTitlePrivacyTermsProfile = view.findViewById(R.id.tv_title_use_terms_profile);
         tvTitleExitProfile = view.findViewById(R.id.tv_title_exit_profile);
@@ -58,8 +69,17 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         tvTitlePrivacyTermsProfile.setOnClickListener(this);
         tvTitleExitProfile.setOnClickListener(this);
 
+        /***
+         *
+         * underlined text e  placed color com SpannableString
+         * colocando cor e sublinhado o texto usando  SpannableString
+         * */
+
+
+
         return view;
     }
+
 
 
 
@@ -74,19 +94,28 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 flametutorialFaq();
                 break;
 
-            case R.id.tv_title_about_profile:
-
+            case R.id.tv_title_about:
+                flameAbout();
                 break;
 
             case R.id.tv_title_policies_profile:
 
+                Intent i = new Intent(getActivity(), ThesesUsePrivacyActivity.class);
+                i.putExtra(TITLE_TOOLBAR, getString(R.string.title_toolbar_privacy_policies));
+                i.putExtra(TEXT_USE, getString(R.string.tv_text_privacy_policies));
+                startActivity(i);
+
+
                 break;
 
             case R.id.tv_title_use_terms_profile:
-                flameTermsUse();
+                Intent iv = new Intent(getActivity(), ThesesUsePrivacyActivity.class);
+                iv.putExtra(TITLE_TOOLBAR, getString(R.string.title_toolbar_terms_of_use));
+                iv.putExtra(TEXT_USE, getString(R.string.tv_text_terms_of_use));
+                startActivity(iv);
                 break;
 
-            case R.id.tv_title_email:
+            case R.id.tv_title_exit_profile:
 
                 break;
 
@@ -95,6 +124,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
 
     }
+
+
 
     private void flameRegistration() {
         Intent i = new Intent(getActivity(), RegistrationDataActivity.class);
@@ -106,14 +137,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         startActivity(i);
     }
 
-    private void flameTermsUse() {
-        Intent i = new Intent(getActivity(), TermsOfUseActivity.class);
+    private void flameAbout() {
+        Intent i = new Intent(getActivity(), AboutTheAppActivity.class);
         startActivity(i);
     }
-//    private void flameRegistration() {
-//        Intent i = new Intent(getActivity(), RegistrationDataActivity.class);
-//        startActivity(i);
-//    }
+
+
 //
 //    private void flameRegistration() {
 //        Intent i = new Intent(getActivity(), RegistrationDataActivity.class);

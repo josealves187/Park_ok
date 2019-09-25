@@ -36,7 +36,7 @@
             android:textColor="#7E7E7E" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_ok"
+        android:id="@+id/btn_confirmation_input"
         style="@style/MaterialButtonTheme"
         android:layout_marginBottom="36dp"
         android:text="ok"

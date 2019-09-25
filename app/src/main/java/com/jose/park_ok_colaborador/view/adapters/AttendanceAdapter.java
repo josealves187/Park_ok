@@ -57,7 +57,7 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
 
         switch (attendenceList.get(position).getTypeVehicle()) {
             case 1:
-                holder.ivCardAttendance.setImageResource(R.drawable.ic_card);
+                holder.ivCardAttendance.setImageResource(R.drawable.ic_car);
                 holder.tvPartialAmount.setText(context.getString(R.string.
                         partial_amount, formatCurrency(context, attendenceList.get(position).getValue())));
                 break;

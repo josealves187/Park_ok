@@ -1,5 +1,6 @@
 package com.jose.park_ok_colaborador.view.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +23,8 @@ public class TutorialAndFAQ extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial_and_faq);
-        initcomponents();
+
+        initializecomponents();
         setSupportActionBar(mtToolbarTutorialFaq);
 
 
@@ -36,9 +38,24 @@ public class TutorialAndFAQ extends AppCompatActivity {
             }
         });
 
+        mcTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TutorialAndFAQ.this, TutorialActivity.class);
+                startActivity(i);
+            }
+        });
+
+        mcTutorialFaq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TutorialAndFAQ.this, FaqActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
-    private void initcomponents() {
+    private void initializecomponents() {
         mtToolbarTutorialFaq = findViewById(R.id.mt_toolbar_tutorial_faq);
         mcTutorial = findViewById(R.id.mc_tutorial);
         mcTutorialFaq = findViewById(R.id.mc_tutorial_faq);

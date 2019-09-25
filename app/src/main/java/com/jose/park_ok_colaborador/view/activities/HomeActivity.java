@@ -107,10 +107,6 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 mVpContent.setCurrentItem(3,false);
                 break;
 
-
         }
-
-
-
     }
 }

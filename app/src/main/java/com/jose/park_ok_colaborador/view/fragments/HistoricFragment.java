@@ -46,6 +46,7 @@ public class HistoricFragment extends Fragment implements HistoricLIstener {
 
         rvHistoric = view.findViewById(R.id.rv_historic);
         List<Historic> historics = new ArrayList<>();
+
         historics.add(new Historic(1, 1, new Date(2), 15, 13, new Date(), 1, "joaa", new Date(), new Date(), "FTG5845", 78945612, 2));
         historics.add(new Historic(2, 2, new Date(3), 16, 14, new Date(), 2, "joaa", new Date(), new Date(), "FTG5845", 78945612, 2));
         historics.add(new Historic(2, 1, new Date(4), 17, 15, new Date(), 3, "joaa", new Date(), new Date(), "FTG5845", 78945612, 2));
