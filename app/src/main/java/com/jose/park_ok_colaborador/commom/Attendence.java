@@ -8,10 +8,10 @@ import java.util.Date;
 public class Attendence implements Parcelable {
 
     private long id;
-    private int cpf;
+    private String cpf;
     private String nameUser;
     private int typeAttendance;
-    private int numberBoard;
+    private String numberBoard;
     private Date dateHour;
     private Date exitAttendece;
     private double amountPayable;
@@ -20,8 +20,9 @@ public class Attendence implements Parcelable {
     private int typeVehicle;
 
 
-    public Attendence(long id, int cpf, String nameUser, int typeAttendance,
-                      int numberBoard, Date dateHour,Date exitAttendece,double amountPayable, double value,double finalValue, int typeVehicle) {
+    public Attendence(long id, String cpf, String nameUser, int typeAttendance, String numberBoard,
+                      Date dateHour, Date exitAttendece, double amountPayable, double value, double
+                              finalValue, int typeVehicle) {
         this.id = id;
         this.cpf = cpf;
         this.nameUser = nameUser;
@@ -30,44 +31,27 @@ public class Attendence implements Parcelable {
         this.dateHour = dateHour;
         this.exitAttendece = exitAttendece;
         this.amountPayable = amountPayable;
-        this.finalValue = finalValue;
         this.value = value;
+        this.finalValue = finalValue;
         this.typeVehicle = typeVehicle;
     }
 
+
     protected Attendence(Parcel in) {
         id = in.readLong();
-        cpf = in.readInt();
+        cpf = in.readString();
         nameUser = in.readString();
         typeAttendance = in.readInt();
         dateHour = new Date(in.readLong());
         exitAttendece = new Date(in.readLong());
-        numberBoard = in.readInt();
-        value = in.readDouble();
+        numberBoard = in.readString();
         amountPayable = in.readDouble();
+        value = in.readDouble();
         finalValue = in.readDouble();
         typeVehicle = in.readInt();
-    }
 
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(id);
-        dest.writeInt(cpf);
-        dest.writeString(nameUser);
-        dest.writeInt(typeAttendance);
-        dest.writeInt(numberBoard);
-        dest.writeLong(dateHour.getTime());
-        dest.writeLong(exitAttendece.getTime());
-        dest.writeDouble(amountPayable);
-        dest.writeDouble(finalValue);
-        dest.writeDouble(value);
-        dest.writeInt(typeVehicle);
-    }
 
-    @Override
-    public int describeContents() {
-        return 0;
     }
 
     public static final Creator<Attendence> CREATOR = new Creator<Attendence>() {
@@ -82,14 +66,6 @@ public class Attendence implements Parcelable {
         }
     };
 
-    public double getFinalValue() {
-        return finalValue;
-    }
-
-    public void setFinalValue(double finalValue) {
-        this.finalValue = finalValue;
-    }
-
     public long getId() {
         return id;
     }
@@ -98,11 +74,11 @@ public class Attendence implements Parcelable {
         this.id = id;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -122,11 +98,11 @@ public class Attendence implements Parcelable {
         this.typeAttendance = typeAttendance;
     }
 
-    public int getNumberBoard() {
+    public String getNumberBoard() {
         return numberBoard;
     }
 
-    public void setNumberBoard(int numberBoard) {
+    public void setNumberBoard(String numberBoard) {
         this.numberBoard = numberBoard;
     }
 
@@ -154,7 +130,6 @@ public class Attendence implements Parcelable {
         this.amountPayable = amountPayable;
     }
 
-
     public double getValue() {
         return value;
     }
@@ -163,12 +138,40 @@ public class Attendence implements Parcelable {
         this.value = value;
     }
 
+    public double getFinalValue() {
+        return finalValue;
+    }
+
+    public void setFinalValue(double finalValue) {
+        this.finalValue = finalValue;
+    }
+
     public int getTypeVehicle() {
         return typeVehicle;
     }
 
     public void setTypeVehicle(int typeVehicle) {
         this.typeVehicle = typeVehicle;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
+        dest.writeString(cpf);
+        dest.writeString(nameUser);
+        dest.writeInt(typeAttendance);
+        dest.writeString(numberBoard);
+        dest.writeDouble(amountPayable);
+        dest.writeDouble(value);
+        dest.writeDouble(finalValue);
+        dest.writeInt(typeVehicle);
+        dest.writeLong(dateHour.getTime());
+        dest.writeLong(exitAttendece.getTime());
     }
 }
 

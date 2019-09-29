@@ -22,7 +22,7 @@ public class ThesesUsePrivacyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theses_use_privacy);
         //inicializar componente
-        initializecomponents();
+        initializeComponents();
 
         //ADD Toobar
         Toolbar toolbar = findViewById(R.id.mt_toolbar);
@@ -40,7 +40,7 @@ public class ThesesUsePrivacyActivity extends AppCompatActivity {
 
     }
 
-    private void initializecomponents() {
+    private void initializeComponents() {
         mtToolbar = findViewById(R.id.mt_toolbar);
         tvText = findViewById(R.id.tv_text);
     }

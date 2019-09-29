@@ -64,6 +64,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:textColor="@color/colorNameTextView"
                 android:text="Marcelo"
+                android:inputType="textCapWords"
                 app:layout_constraintEnd_toEndOf="@+id/iv_details_card"
                 app:layout_constraintStart_toStartOf="@+id/iv_details_card"
                 app:layout_constraintTop_toBottomOf="@+id/iv_details_card" />
@@ -97,6 +98,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:textColor="@color/colorNameTextView"
                 android:text="PZO - 5879"
+                android:textAllCaps="true"
                 app:layout_constraintEnd_toEndOf="@+id/iv_details_board"
                 app:layout_constraintStart_toStartOf="@+id/iv_details_board"
                 app:layout_constraintTop_toBottomOf="@+id/iv_details_board" />
@@ -159,8 +161,8 @@
                 android:id="@+id/tv_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_regular"
                 android:text="Valor pago:"
+                android:fontFamily="@font/quicksand_bold"
                 android:textColor="@color/colorNameTextView"
                 app:layout_constraintEnd_toEndOf="@+id/iv_amount_paid_details"
                 app:layout_constraintStart_toStartOf="@+id/iv_amount_paid_details"

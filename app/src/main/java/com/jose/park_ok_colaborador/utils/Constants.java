@@ -3,6 +3,7 @@ package com.jose.park_ok_colaborador.utils;
 public abstract class Constants {
 
     public  final static String HISTORIC = "HISTORIC";
+    public  final static String REGISTRATIODATA = "REGISTRATIODATA";
     public  final static String ATTENDENCE = "ATTENDENCE";
     public  final static String FORM_OF_PAYMENT_APP = "PELO APP";
     public  final static String FORM_OF_PAYMENT_AMOUNT = "DINHEIRO";

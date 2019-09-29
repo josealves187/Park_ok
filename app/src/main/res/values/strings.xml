@@ -2,12 +2,10 @@
     <string name="app_name">Park_Ok_colaborador</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_toolbar_calls">ATENDIMENTOS</string>
-    <string name="title_toolbar_historic">HISTORICO</string>
+    <string name="title_toolbar_historic">HISTÓRICO</string>
     <string name="title_toolbar_calls_recover_password">Recuperar senha</string>
     <string name="title_toolbar_details">Detalhes</string>
-    <string name="tilte_privacy_policies_and_terms">Políticas de Privacidade e Termos de Uso</string>
     <string name="title_toolbar_check_out">Registrar saída</string>
     <string name="title_toolbar_payment_method">Forma de pagamento</string>
     <string name="title_toolbar_bonus_customer">Bonificar cliente</string>
@@ -20,6 +18,8 @@
     <string name="title_toolbar_faq_app">FAQ</string>
     <string name="title_toolbar_tutorial">Tutorial</string>
     <string name="title_toolbar_data_client">Dados do cliente</string>
+
+    <string name="tilte_privacy_policies_and_terms">Políticas de Privacidade e Termos de Uso</string>
     <string name="tv_change_adapter_attendance">ALTERAR</string>
     <string name="btn_log_in_login">ENTRAR</string>
     <string name="tv_register_login_Not_registered_yet">Ainda não possui cadastro?</string>

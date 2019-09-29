@@ -23,7 +23,7 @@ public class VehicleTypeActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_type);
 
-        initializecomponents();
+        initializeComponents();
 
         //ADD Toobar
         Toolbar toolbar = findViewById(R.id.mt_toolbar_vehicle_type);
@@ -31,6 +31,7 @@ public class VehicleTypeActivity extends AppCompatActivity implements View.OnCli
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+        // passe uma instância da sua implementação para o respectivo método setOnClickListener
         cmCarVehicle.setOnClickListener(this);
         cmMotorcycleVehicle.setOnClickListener(this);
         cmBigCarVehicle.setOnClickListener(this);
@@ -40,13 +41,19 @@ public class VehicleTypeActivity extends AppCompatActivity implements View.OnCli
 
     }
 
-    private void initializecomponents() {
+    private void initializeComponents() {
         cmCarVehicle = findViewById(R.id.cm_car_vehicle);
-        cmMotorcycleVehicle = findViewById(R.id.cm_motorcycle_vehicle);
         cmBigCarVehicle = findViewById(R.id.cm_big_car_vehicle);
+        cmMotorcycleVehicle = findViewById(R.id.cm_motorcycle_vehicle);
         cmVehicleX = findViewById(R.id.cm_vehicle_x);
         cmVehicleY = findViewById(R.id.cm_vehicle_y);
     }
+
+
+    /**
+     * Isso é chamado quando o usuário toca no item (no modo de toque) ou atribui foco ao item com
+     * as teclas de navegação ou o trackball e pressiona a tecla “enter” ou o pressiona no trackball.
+     */
 
     @Override
     public void onClick(View v) {
@@ -72,7 +79,7 @@ public class VehicleTypeActivity extends AppCompatActivity implements View.OnCli
                 break;
         }
     }
-    
+
     private void calledView() {
 
         Intent intent = new Intent(VehicleTypeActivity.this, SelectTheTypeOfStayActivity.class);

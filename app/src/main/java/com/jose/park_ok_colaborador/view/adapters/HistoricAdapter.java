@@ -41,7 +41,6 @@ public class HistoricAdapter extends RecyclerView.Adapter<HistoricAdapter.Histor
     public HistoricAdapter.HistoricViewHolde onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_adapter_historic, parent, false);
        HistoricViewHolde historicViewHolde = new HistoricViewHolde(view);
-
         return historicViewHolde;
     }
 
@@ -82,6 +81,7 @@ public class HistoricAdapter extends RecyclerView.Adapter<HistoricAdapter.Histor
         holder.tvPastingHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 historicLIstener.historicOnClick(historics.get(position),position);
             }
         });

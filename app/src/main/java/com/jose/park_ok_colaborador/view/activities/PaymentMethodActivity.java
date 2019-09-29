@@ -1,25 +1,26 @@
 package com.jose.park_ok_colaborador.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.Fragment;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.jose.park_ok_colaborador.R;
 import com.jose.park_ok_colaborador.commom.Attendence;
+import com.jose.park_ok_colaborador.view.fragments.AttendanceFragment;
+
+import java.util.List;
 
 import static com.jose.park_ok_colaborador.utils.Constants.ATTENDENCE;
 import static com.jose.park_ok_colaborador.utils.Utils.formatCurrency;
-import static com.jose.park_ok_colaborador.utils.Utils.timeFormat;
 
 public class PaymentMethodActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,6 +33,7 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
     private TextView tvPaymentMethodAmountPayable;
     private TextView tv_payment_method_discount;
     private TextView tv_payment_method_final_value;
+    private MaterialToolbar mtToolbarPaymentMethod;
 
 
 
@@ -42,15 +44,20 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_payment_method);
 
         //inicializar componente
-        initializecomponents();
-
-        //ADD Toobar
-        Toolbar toolbar = findViewById(R.id.mt_toolbar_payment_method);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        initializeComponents();
+        setSupportActionBar(mtToolbarPaymentMethod);
 
         Bundle extras = getIntent().getExtras();
         final Attendence attendence = extras.getParcelable(ATTENDENCE);
+
+        mtToolbarPaymentMethod.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
 
         cmPaymentMethodFurApp.setOnClickListener(this);
         cmPaymentMethodMoney.setOnClickListener(this);
@@ -68,15 +75,22 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
         }
 
     }
+    @Override
+    public void onBackPressed(){
 
-    private void initializecomponents() {
+        SharedPreferences.Editor editor = getSharedPreferences("PARKOK", MODE_PRIVATE).edit();
+        editor.putInt("SCREEN_ORIGEN", 2);
+        editor.commit();
+        super.onBackPressed();
+    }
+    private void initializeComponents() {
         cmPaymentMethodFurApp = findViewById(R.id.cm_payment_method_fur_app);
         cmPaymentMethodMoney = findViewById(R.id.cm_payment_method_money);
         cmPaymentMethodCard = findViewById(R.id.cm_payment_method_card);
-
         tvPaymentMethodAmountPayable = findViewById(R.id.tv_payment_method_amount_payable);
         tv_payment_method_discount = findViewById(R.id.tv_payment_method_discount);
         tv_payment_method_final_value = findViewById(R.id.tv_payment_method_final_value);
+        mtToolbarPaymentMethod = findViewById(R.id.mt_toolbar_payment_method);
     }
 
     private void abrirDialog() {

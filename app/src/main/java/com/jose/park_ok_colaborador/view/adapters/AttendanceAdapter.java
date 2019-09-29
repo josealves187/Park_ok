@@ -13,11 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.button.MaterialButton;
 import com.jose.park_ok_colaborador.R;
 import com.jose.park_ok_colaborador.commom.Attendence;
+import com.jose.park_ok_colaborador.utils.MaskTextView;
+import com.jose.park_ok_colaborador.utils.UtilMask;
 import com.jose.park_ok_colaborador.view.adapters.listeners.AttendenceListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.jose.park_ok_colaborador.utils.MaskTextView.boad;
+import static com.jose.park_ok_colaborador.utils.MaskTextView.cpf;
 import static com.jose.park_ok_colaborador.utils.Utils.formatCurrency;
 import static com.jose.park_ok_colaborador.utils.Utils.timeFormat;
 
@@ -86,21 +90,21 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
 
             case 5:
                 holder.ivCardAttendance.setImageResource(R.drawable.ic_bigcar);
-                holder.tvPartialAmount.setText(context.getString(R.string.
+                holder.tvPartialAmount.setText( context.getString(R.string.
                         partial_amount, formatCurrency(context, attendenceList.get(position).getValue())));
                 break;
         }
 
         holder.tvName.setText(attendenceList.get(position).getNameUser());
-        holder.tvCpf.setText(String.valueOf(attendenceList.get(position).getCpf()));
-        holder.tvBoardCard.setText(String.valueOf(attendenceList.get(position).getNumberBoard()));
+        holder.tvCpf.setText(cpf(attendenceList.get(position).getCpf()));
+        holder.tvBoardCard.setText(boad(attendenceList.get(position).getNumberBoard()));
         holder.tvInputAdapterAttendance.setText(context.getString(R.string.input_time_attendance,
                 timeFormat(attendenceList.get(position).getDateHour(), context)));
 
         switch (attendenceList.get(position).getTypeAttendance()) {
             case 1:
                 holder.endService.setText("SAÍDA SEM QR-CODE");
-                callingOnCliSemQRcode(holder, position);
+                attendanceOnClickSemQR(holder, position);
                 break;
             case 2:
                 holder.endService.setText("FINALIZA ATENDIMENTO");
@@ -123,7 +127,7 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
         });
     }
 
-    private void callingOnCliSemQRcode(@NonNull AttendanceViewHolder holder, final int position) {
+    private void attendanceOnClickSemQR(@NonNull AttendanceViewHolder holder, final int position) {
         holder.endService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

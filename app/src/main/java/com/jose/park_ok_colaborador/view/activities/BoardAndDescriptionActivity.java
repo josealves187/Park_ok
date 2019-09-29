@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.core.widget.NestedScrollView;
 
 import com.google.android.material.button.MaterialButton;
 import com.jose.park_ok_colaborador.R;
+import com.jose.park_ok_colaborador.utils.UtilMask;
 
 public class BoardAndDescriptionActivity extends AppCompatActivity implements Animation.AnimationListener {
 
@@ -25,6 +27,8 @@ public class BoardAndDescriptionActivity extends AppCompatActivity implements An
     private NestedScrollView nsvBoardDescription;
     private boolean informationvisible = false;
     private MaterialButton btnCheckInVehicle;
+    private ImageView ivArrow;
+    private EditText tvVehicleBoad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +41,8 @@ public class BoardAndDescriptionActivity extends AppCompatActivity implements An
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         // set animation listener
         animFadein.setAnimationListener(this);
-
 
         tvInformation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,18 +53,20 @@ public class BoardAndDescriptionActivity extends AppCompatActivity implements An
                     tvInformation.setText("OCULTAR");
                     etAddInformation.setVisibility(View.VISIBLE);
                     etAddInformation.startAnimation(animFadein);
+                    ivArrow.setImageResource(R.drawable.ic_up_arrow);
+                    ivArrow.setVisibility(View.VISIBLE);
 
                     int scrollTo = ((View) tvTitleDescription.getParent().getParent()).getTop() + tvTitleDescription.getTop();
                     nsvBoardDescription.fullScroll(View.FOCUS_DOWN);
                     nsvBoardDescription.smoothScrollTo(0, scrollTo);
-
 
                 } else {
 
                     tvInformation.setText("INFORMAR");
                     etAddInformation.setVisibility(View.GONE);
                     etAddInformation.startAnimation(animFadeinUp);
-
+                    ivArrow.setImageResource(R.drawable.ic_arrow_download);
+                    ivArrow.setVisibility(View.VISIBLE);
 
                 }
 
@@ -76,21 +80,31 @@ public class BoardAndDescriptionActivity extends AppCompatActivity implements An
                 startActivity(intent);
             }
         });
-
     }
 
     private void intComponents() {
-        nsvBoardDescription = findViewById(R.id.nsv_board_description);
+
+        ivArrow = findViewById(R.id.iv_arrow);
         etAddInformation = findViewById(R.id.et_add_information);
+        nsvBoardDescription = findViewById(R.id.nsv_board_description);
+        btnCheckInVehicle= findViewById(R.id.btn_check_in_vehicle);
+
         tvInformation = findViewById(R.id.tv_information);
         tvTitleDescription= findViewById(R.id.tv_title_description);
-        btnCheckInVehicle= findViewById(R.id.btn_check_in_vehicle);
+        tvVehicleBoad = findViewById(R.id.tv_vehicle_boad);
+
         // load the animation
         animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.swipe_down_boar_description);
         // load the animation
         animFadeinUp = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.slide_up_board_description);
+
+        /**
+         * mascara no campo placa
+         * ex PPZ-4185
+         * */
+        tvVehicleBoad.addTextChangedListener(UtilMask.mask(tvVehicleBoad, UtilMask.BOAD));
     }
 
     @Override

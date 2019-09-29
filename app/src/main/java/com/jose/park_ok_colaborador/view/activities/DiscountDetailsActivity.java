@@ -19,6 +19,8 @@ import static com.jose.park_ok_colaborador.utils.Constants.FORM_OF_PAYMENT_CARD;
 import static com.jose.park_ok_colaborador.utils.Constants.FORM_OF_PAYMENT_AMOUNT;
 import static com.jose.park_ok_colaborador.utils.Constants.FORM_OF_PAYMENT_APP;
 import static com.jose.park_ok_colaborador.utils.Constants.HISTORIC;
+import static com.jose.park_ok_colaborador.utils.MaskTextView.boad;
+import static com.jose.park_ok_colaborador.utils.MaskTextView.cpf;
 import static com.jose.park_ok_colaborador.utils.Utils.formatCurrency;
 import static com.jose.park_ok_colaborador.utils.Utils.timeFormat;
 
@@ -62,8 +64,8 @@ public class DiscountDetailsActivity extends AppCompatActivity {
             tvInputDetails.setText(getString(R.string.input_time, timeFormat(historic.getInput(), this)));
             tvExitDetails.setText(getString(R.string.exit_time, timeFormat(historic.getExit(), this)));
             tvNameUserDetails.setText(historic.getNome());
-            tvDetailsCpf.setText(String.valueOf(historic.getCpf()));
-            tvBoardUserDetails.setText(historic.getBoad());
+            tvDetailsCpf.setText(cpf(historic.getCpf()));
+            tvBoardUserDetails.setText(boad(historic.getBoad()));
             switch (historic.getFormOfPayment()) {
                 case 1:
                     tvPaymentMethod.setText(getString(R.string.form_of_payment, FORM_OF_PAYMENT_APP));
@@ -92,11 +94,17 @@ public class DiscountDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
-                SharedPreferences.Editor editor = getSharedPreferences("PARKOK", MODE_PRIVATE).edit();
-                editor.putInt("SCREEN_ORIGEN", 3);
-                editor.commit();
+
             }
         });
+    }
+    @Override
+    public void onBackPressed(){
+
+        SharedPreferences.Editor editor = getSharedPreferences("PARKOK", MODE_PRIVATE).edit();
+        editor.putInt("SCREEN_ORIGEN", 3);
+        editor.commit();
+        super.onBackPressed();
     }
 
     private void initViews() {

@@ -1,6 +1,7 @@
 package com.jose.park_ok_colaborador.commom;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class FAQ implements Serializable {
 
@@ -29,4 +30,7 @@ public class FAQ implements Serializable {
     public void setInformation(String information) {
         this.information = information;
     }
+
+
+
 }

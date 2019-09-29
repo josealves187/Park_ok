@@ -5,12 +5,12 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorTextButton">#F54800</color>
     <color name="colorTextView">#F54800</color>
-    <color name="colorFundBotton">#ffff</color>
+    <color name="colorFundSplash">#ffff</color>
     <color name="colorButtAction">#616161</color>
     <color name="colorborder">#000</color>
     <color name="colorTitleMenu">#616161</color>
-    <color name="colorItemSelected">#F54800</color>
-    <color name="colorItemNotSelected">#616161</color>
+    <color name="colorItemSelectedMenu">#F54800</color>
+    <color name="colorItemNotSelectedMenu">#616161</color>
     <color name="colorStrokeCardView">#F54800</color>
     <color name="colorTextViewText">#616161</color>
     <color name="color_toolbar_menu">#F54800</color>

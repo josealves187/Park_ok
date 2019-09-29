@@ -8,8 +8,8 @@
     tools:context=".view.activities.RegistrationDataActivity">
 
 
-    <EditText
-        android:id="@+id/btn_registe"
+    <TextView
+        android:id="@+id/tv_cpf_register"
         style="@style/MaterialEditTextTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,11 +19,11 @@
         android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_register"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_register"
         tools:layout_editor_absoluteY="352dp" />
 
-    <EditText
-        android:id="@+id/btn_regist"
+    <TextView
+        android:id="@+id/tv_email_register"
         style="@style/MaterialEditTextTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_registe"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cpf_register"
         tools:layout_editor_absoluteY="352dp" />
 
     <TextView
@@ -42,8 +42,8 @@
         style="@style/MaterialTexteViewTheme"
         android:layout_marginBottom="8dp"
         android:text="Nome completo"
-        app:layout_constraintBottom_toTopOf="@+id/btn_register"
-        app:layout_constraintStart_toStartOf="@+id/btn_register" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_name_register"
+        app:layout_constraintStart_toStartOf="@+id/tv_name_register" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,8 +52,8 @@
         android:text="E-mail"
         style="@style/MaterialTexteViewTheme"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_regist"
-        app:layout_constraintStart_toStartOf="@+id/btn_regist" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_email_register"
+        app:layout_constraintStart_toStartOf="@+id/tv_email_register" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,8 +62,8 @@
         android:text="CPF"
         style="@style/MaterialTexteViewTheme"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_registe"
-        app:layout_constraintStart_toStartOf="@+id/btn_registe" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_cpf_register"
+        app:layout_constraintStart_toStartOf="@+id/tv_cpf_register" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/mt_toolbar_data_registrion"
@@ -78,9 +78,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <EditText
+    <TextView
         style="@style/MaterialEditTextTheme"
-        android:id="@+id/btn_register"
+        android:id="@+id/tv_name_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="26dp"

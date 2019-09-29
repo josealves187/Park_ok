@@ -7,14 +7,15 @@
     tools:context=".view.activities.ReportPlateActivity">
 
     <EditText
-        android:id="@+id/tv_email"
+        android:id="@+id/tv_boad_inform"
         style="@style/MaterialTextViewTheme"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
-        android:inputType="textPersonName"
+        android:inputType="textCapCharacters"
+        android:textAllCaps="true"
         android:padding="12dp"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
@@ -33,7 +34,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_boad_inform" />
 
     <TextView
         android:id="@+id/textView4"
@@ -44,13 +45,13 @@
         android:fontFamily="@font/quicksand_regular"
         android:text="Informe a placa"
         android:textColor="@color/colorNameTextView"
-        app:layout_constraintBottom_toTopOf="@+id/tv_email"
-        app:layout_constraintStart_toStartOf="@+id/tv_email" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_boad_inform"
+        app:layout_constraintStart_toStartOf="@+id/tv_boad_inform" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/textView2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_marginStart="26dp"
         android:layout_marginEnd="26dp"
         android:fillViewport="true"
@@ -60,17 +61,24 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
         <TextView
 
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:fontFamily="@font/quicksand_regular"
-            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"
+            android:text="@string/text_terms_use"
             android:textColor="@color/colorNameTextView"
-            app:layout_constraintBottom_toTopOf="@+id/btn_report_plate"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
 

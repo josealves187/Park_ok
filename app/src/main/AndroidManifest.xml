@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:hardwareAccelerated="true"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".view.activities.FaqActivity"
@@ -21,11 +22,9 @@
             android:name=".view.activities.ThesesUsePrivacyActivity"
             android:parentActivityName=".view.activities.AboutTheAppActivity" />
         <activity
-            android:name=".view.activities.PaymentMethodActivity"
-            android:parentActivityName=".view.activities.CheckOutActivity" />
+            android:name=".view.activities.PaymentMethodActivity"/>
         <activity
-            android:name=".view.activities.CheckOutActivity"
-            android:parentActivityName=".view.activities.BonusCustomerActivity" />
+            android:name=".view.activities.CheckOutActivity" />
         <activity
             android:name=".view.activities.BonusCustomerActivity"
             android:parentActivityName=".view.activities.ReportPlateActivity" />
@@ -37,16 +36,22 @@
             android:parentActivityName=".view.activities.VehicleTypeActivity" />
         <activity
             android:name=".view.activities.VehicleTypeActivity"
-            android:parentActivityName=".view.activities.BoardAndDescriptionActivity" />
+            android:parentActivityName=".view.activities.BoardAndDescriptionActivity"/>
         <activity
             android:name=".view.activities.BoardAndDescriptionActivity"
-            android:parentActivityName=".view.activities.QRcode.QrcodeClientDataActivity" />
+            android:parentActivityName=".view.activities.QRcode.QrcodeClientDataActivity"/>
         <activity
             android:name=".view.activities.QRcode.QrcodeClientDataActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".view.activities.RegistrationDataActivity" />
+            android:screenOrientation="portrait"
+            tools:replace="screenOrientation"/>
+        <activity android:name=".view.activities.RegistrationDataActivity"
+            android:screenOrientation="portrait"
+            tools:replace="screenOrientation"/>
         <activity android:name=".view.activities.DiscountDetailsActivity" />
         <activity android:name=".view.activities.HomeActivity" />
+        <activity  android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="portrait"
+            tools:replace="screenOrientation"/>
         <activity
             android:name=".view.activities.RecoverPasswordActivity"
             android:parentActivityName=".view.activities.LoginActivity"
@@ -59,9 +64,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="com.android.hardware.Camera.focus"/>
 
 </manifest>

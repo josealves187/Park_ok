@@ -70,9 +70,6 @@ public class AboutTheAppActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
-                SharedPreferences.Editor editor = getSharedPreferences("PARKOK", MODE_PRIVATE).edit();
-                editor.putInt(SCREEN_ORIGEN, 4);
-                editor.commit();
             }
         });
 
@@ -104,6 +101,14 @@ public class AboutTheAppActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+
+        SharedPreferences.Editor editor = getSharedPreferences("PARKOK", MODE_PRIVATE).edit();
+        editor.putInt("SCREEN_ORIGEN", 4);
+        editor.commit();
+        super.onBackPressed();
+    }
     private void initializeComponent() {
         mtToolbarTermosUse = findViewById(R.id.mt_toolbar_termos_use);
         tvTemos = findViewById(R.id.tv_temos);

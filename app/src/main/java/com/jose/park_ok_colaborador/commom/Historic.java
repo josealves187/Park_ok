@@ -19,12 +19,14 @@ public class Historic implements Parcelable {
     private Date input;
     private Date exit;
     private String boad;
-    private long cpf;
+    private String cpf;
     private double discountAmount;
 
 
 
-    public Historic(long id, int typeService, Date lenghtOfStay, double amount, double amountPaid, Date serviceDate, int formOfPayment, String nome, Date input, Date exit, String boad, long cpf, double discountAmount) {
+    public Historic(long id, int typeService, Date lenghtOfStay, double amount,
+                    double amountPaid, Date serviceDate, int formOfPayment, String nome,
+                    Date input, Date exit, String boad, String cpf, double discountAmount) {
         this.id = id;
         this.typeService = typeService;
         this.lenghtOfStay = lenghtOfStay;
@@ -48,7 +50,7 @@ public class Historic implements Parcelable {
         formOfPayment = in.readInt();
         nome = in.readString();
         boad = in.readString();
-        cpf = in.readLong();
+        cpf = in.readString();
         input = new Date(in.readLong());
         exit = new Date(in.readLong());
         lenghtOfStay = new Date(in.readLong());
@@ -64,7 +66,7 @@ public class Historic implements Parcelable {
         dest.writeInt(formOfPayment);
         dest.writeString(nome);
         dest.writeString(boad);
-        dest.writeLong(cpf);
+        dest.writeString(cpf);
         dest.writeLong(input.getTime());
         dest.writeLong(lenghtOfStay.getTime());
         dest.writeLong(exit.getTime());
@@ -132,7 +134,7 @@ public class Historic implements Parcelable {
         return boad;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
