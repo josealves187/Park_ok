@@ -28,21 +28,17 @@ public class SelectTheTypeOfStayActivity extends AppCompatActivity implements Vi
 
         //inicializar componente
         initializeComponents();
-
-        //ADD Toobar
-        Toolbar toolbar = findViewById(R.id.mt_toolbar_select_type_atay);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        implementationInstance();
 
 
-        // passe uma instância da sua implementação para o respectivo método setOnClickListener
+    }
+    // passe uma instância da sua implementação para o respectivo método setOnClickListener
+    private void  implementationInstance(){
         cmCarVehicle.setOnClickListener(this);
         cmMotorcycleVehicle.setOnClickListener(this);
         cmBigCarVehicle.setOnClickListener(this);
         cmVehicleX.setOnClickListener(this);
-
     }
-
     /**
      * Caixas de diálogo
      * As caixas de diálogo são pequenas janelas que levam o usuário a tomar uma
@@ -69,6 +65,10 @@ public class SelectTheTypeOfStayActivity extends AppCompatActivity implements Vi
         cmMotorcycleVehicle = findViewById(R.id.cm_motorcycle_vehicle);
         cmBigCarVehicle = findViewById(R.id.cm_big_car_vehicle);
         cmVehicleX = findViewById(R.id.cm_vehicle_x);
+        //ADD Toobar
+        Toolbar toolbar = findViewById(R.id.mt_toolbar_select_type_atay);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 

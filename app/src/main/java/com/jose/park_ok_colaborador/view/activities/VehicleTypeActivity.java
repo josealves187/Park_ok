@@ -24,21 +24,16 @@ public class VehicleTypeActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_vehicle_type);
 
         initializeComponents();
+        implementationInstance();
 
-        //ADD Toobar
-        Toolbar toolbar = findViewById(R.id.mt_toolbar_vehicle_type);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-        // passe uma instância da sua implementação para o respectivo método setOnClickListener
+    }
+    // passe uma instância da sua implementação para o respectivo método setOnClickListener
+    private void implementationInstance() {
         cmCarVehicle.setOnClickListener(this);
         cmMotorcycleVehicle.setOnClickListener(this);
         cmBigCarVehicle.setOnClickListener(this);
         cmVehicleX.setOnClickListener(this);
         cmVehicleY.setOnClickListener(this);
-
-
     }
 
     private void initializeComponents() {
@@ -47,6 +42,10 @@ public class VehicleTypeActivity extends AppCompatActivity implements View.OnCli
         cmMotorcycleVehicle = findViewById(R.id.cm_motorcycle_vehicle);
         cmVehicleX = findViewById(R.id.cm_vehicle_x);
         cmVehicleY = findViewById(R.id.cm_vehicle_y);
+        //ADD Toobar
+        Toolbar toolbar = findViewById(R.id.mt_toolbar_vehicle_type);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 

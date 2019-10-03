@@ -3,7 +3,6 @@ package com.jose.park_ok_colaborador.commom;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.security.PrivateKey;
 import java.util.Date;
 
 public class Historic implements Parcelable {

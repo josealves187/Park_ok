@@ -24,11 +24,7 @@ public class ThesesUsePrivacyActivity extends AppCompatActivity {
         //inicializar componente
         initializeComponents();
 
-        //ADD Toobar
-        Toolbar toolbar = findViewById(R.id.mt_toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setSupportActionBar(mtToolbar);
+
 
         String sMessageToolbar = getIntent().getExtras().getString(TITLE_TOOLBAR, "");
         String sText = getIntent().getExtras().getString(TEXT_USE, "");
@@ -43,5 +39,10 @@ public class ThesesUsePrivacyActivity extends AppCompatActivity {
     private void initializeComponents() {
         mtToolbar = findViewById(R.id.mt_toolbar);
         tvText = findViewById(R.id.tv_text);
+        //ADD Toobar
+        Toolbar toolbar = findViewById(R.id.mt_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(mtToolbar);
     }
 }

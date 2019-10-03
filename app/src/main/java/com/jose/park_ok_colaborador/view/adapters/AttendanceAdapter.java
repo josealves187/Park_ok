@@ -73,12 +73,16 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
                 break;
 
             case 3:
-                holder.ivBoard.setImageResource(R.drawable.ic_gift);
-                holder.ivCardAttendance.setVisibility(View.GONE);
+                holder.ivCardAttendance.setImageResource(R.drawable.ic_gift);
+                holder.ivCardAttendance.setVisibility(View.VISIBLE);
                 holder.tvName.setVisibility(View.GONE);
-                holder.tvCpf.setVisibility(View.GONE);
+                holder.tvName.setText("Everton");
+                holder.tvName.setVisibility(View.VISIBLE);
+                holder.tvCpf.setVisibility(View.VISIBLE);
                 holder.tvPartialAmount.setText("Tempo tolerância");
                 holder.tvPartialAmount.setVisibility(View.VISIBLE);
+                holder.ivBoard.setVisibility(View.GONE);
+                holder.tvBoardCard.setVisibility(View.GONE);
 
                 break;
 
@@ -107,12 +111,13 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
                 attendanceOnClickSemQR(holder, position);
                 break;
             case 2:
-                holder.endService.setText("FINALIZA ATENDIMENTO");
-                callingOnClick(holder, position);
-                break;
-            case 3:
                 holder.endService.setText("CANCELAR");
                 callingOnClick(holder, position);
+                break;
+
+                case 3:
+                    holder.endService.setText("");
+                    holder.endService.setVisibility(View.INVISIBLE);
                 break;
         }
 

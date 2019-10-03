@@ -37,38 +37,43 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         InitializedComponents();
+        eventoButton();
 
+
+    }
+
+    private void eventoButton() {
 
         bnt_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = tvEmail.getText().toString();
-                String password = tvPasswor.getText().toString();
-                boolean validCredential = true;
-                
-                if (!user.equals("teste@gmail.com")) {
-                    validCredential = false;
-                    tvEmail.setError("Informe seu e-mail.");
-                    tvEmail.requestFocus();
-                } else {
-                    tvEmail.setError(null);
-                }
+//                String user = tvEmail.getText().toString();
+//                String password = tvPasswor.getText().toString();
+//                boolean validCredential = true;
+//
+//                if (!user.equals("teste@gmail.com")) {
+//                    validCredential = false;
+//                    tvEmail.setError("Informe seu e-mail.");
+//                    tvEmail.requestFocus();
+//                } else {
+//                    tvEmail.setError(null);
+//                }
+//
+//                if (!password.equals(("123456"))) {
+//                    validCredential = false;
+//                    tvPasswor.setError(("Digite sua senha primeiro!"));
+//                    tvPasswor.requestFocus();
+//                } else {
+//                    tvPasswor.setError(null);
+//                }
 
-                if (!password.equals(("123456"))) {
-                    validCredential = false;
-                    tvPasswor.setError(("Digite sua senha primeiro!"));
-                    tvPasswor.requestFocus();
-                } else {
-                    tvPasswor.setError(null);
-                }
-
-                if (validCredential) {
+//                if (validCredential) {
 
                     onBackPressed();
                     calledScreen();
                 }
 
-            }
+//            }
         });
 
         tvTelaRecoverPassword.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +84,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
     private void calledScreenRecoverPasswor() {
@@ -102,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         SharedPreferences.Editor editor = getSharedPreferences("PARKOK", MODE_PRIVATE).edit();
-        editor.putInt("SCREEN_ORIGEN", 2);
+        editor.putInt("SCREEN_ORIGEN", 1);
         editor.commit();
         super.onBackPressed();
     }

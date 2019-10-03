@@ -35,9 +35,6 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
     private TextView tv_payment_method_final_value;
     private MaterialToolbar mtToolbarPaymentMethod;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +42,7 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
 
         //inicializar componente
         initializeComponents();
+        implementationInstance();
         setSupportActionBar(mtToolbarPaymentMethod);
 
         Bundle extras = getIntent().getExtras();
@@ -59,12 +57,6 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
 
 
 
-        cmPaymentMethodFurApp.setOnClickListener(this);
-        cmPaymentMethodMoney.setOnClickListener(this);
-        cmPaymentMethodCard.setOnClickListener(this);
-
-
-
         if (attendence != null) {
 
             tvPaymentMethodAmountPayable.setText(getString(R.string.amount_payable, formatCurrency(this, attendence.getValue())));
@@ -75,6 +67,14 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
         }
 
     }
+
+    private void implementationInstance() {
+        cmPaymentMethodFurApp.setOnClickListener(this);
+        cmPaymentMethodMoney.setOnClickListener(this);
+        cmPaymentMethodCard.setOnClickListener(this);
+
+    }
+
     @Override
     public void onBackPressed(){
 
@@ -83,6 +83,7 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
         editor.commit();
         super.onBackPressed();
     }
+
     private void initializeComponents() {
         cmPaymentMethodFurApp = findViewById(R.id.cm_payment_method_fur_app);
         cmPaymentMethodMoney = findViewById(R.id.cm_payment_method_money);

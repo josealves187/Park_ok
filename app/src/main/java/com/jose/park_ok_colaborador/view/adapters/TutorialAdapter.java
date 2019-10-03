@@ -22,6 +22,8 @@ public class TutorialAdapter extends RecyclerView.Adapter<TutorialAdapter.Tutori
     private Context context;
 
 
+
+
     public TutorialAdapter(List<Tutorial> tutorials, Context context){
         this.tutorials = tutorials;
         this.context = context;
