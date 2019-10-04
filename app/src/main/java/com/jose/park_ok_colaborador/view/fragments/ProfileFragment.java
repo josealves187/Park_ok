@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.jose.park_ok_colaborador.R;
 import com.jose.park_ok_colaborador.commom.Users;
+import com.jose.park_ok_colaborador.view.activities.LoginActivity;
 import com.jose.park_ok_colaborador.view.activities.QRcode.QrcodeClientDataActivity;
 import com.jose.park_ok_colaborador.view.activities.RegistrationDataActivity;
 import com.jose.park_ok_colaborador.view.activities.AboutTheAppActivity;
@@ -69,7 +70,7 @@ public class ProfileFragment extends Fragment implements RegistratioDataListener
 
         Users users = new Users(1, "José", "14587965288", "jralves187@gmail.com");
         if (users != null) {
-            Glide.with(this).load("https://api.adorable.io/avatars/285/abott@adorable.png").into(civPhotoProfile);
+            Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/freedelivery-8ff6e.appspot.com/o/imagens%2FUsuario%2FyO40m4hU9dR2eoQLANMrSkkcIQP2jpeg?alt=media&token=30dffe08-64ba-4b08-acca-10c6f1ac7d0f").into(civPhotoProfile);
             tvNameProfile.setText(users.getNameUser());
 
 
@@ -98,7 +99,6 @@ public class ProfileFragment extends Fragment implements RegistratioDataListener
         switch (v.getId()) {
             case R.id.tv_registration_dat:
                 flameRegistration();
-
                 break;
 
             case R.id.tv_title_faq_profile:
@@ -119,7 +119,7 @@ public class ProfileFragment extends Fragment implements RegistratioDataListener
                 break;
 
             case R.id.tv_title_exit_profile:
-
+                flameLogin();
                 break;
         }
     }
@@ -139,6 +139,11 @@ public class ProfileFragment extends Fragment implements RegistratioDataListener
 
     private void flametutorialFaq() {
         Intent i = new Intent(getActivity(), TutorialAndFAQ.class);
+        startActivity(i);
+    }
+
+    private void flameLogin() {
+        Intent i = new Intent(getActivity(), LoginActivity.class);
         startActivity(i);
     }
 

@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.button.MaterialButton;
 import com.jose.park_ok_colaborador.R;
 import com.jose.park_ok_colaborador.commom.Attendence;
-import com.jose.park_ok_colaborador.utils.MaskTextView;
-import com.jose.park_ok_colaborador.utils.UtilMask;
 import com.jose.park_ok_colaborador.view.adapters.listeners.AttendenceListener;
 
 import java.util.ArrayList;
@@ -64,25 +62,28 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
                 holder.ivCardAttendance.setImageResource(R.drawable.ic_car);
                 holder.tvPartialAmount.setText(context.getString(R.string.
                         partial_amount, formatCurrency(context, attendenceList.get(position).getValue())));
+                holder.tvName.setText(attendenceList.get(position).getNameUser());
                 break;
 
             case 2:
                 holder.ivBoard.setImageResource(R.drawable.board);
                 holder.tvPartialAmount.setText(context.getString(R.string.
                         partial_amount, formatCurrency(context, attendenceList.get(position).getValue())));
+                holder.tvName.setText(attendenceList.get(position).getNameUser());
                 break;
 
             case 3:
                 holder.ivCardAttendance.setImageResource(R.drawable.ic_gift);
                 holder.ivCardAttendance.setVisibility(View.VISIBLE);
-                holder.tvName.setVisibility(View.GONE);
-                holder.tvName.setText("Everton");
-                holder.tvName.setVisibility(View.VISIBLE);
                 holder.tvCpf.setVisibility(View.VISIBLE);
                 holder.tvPartialAmount.setText("Tempo tolerância");
                 holder.tvPartialAmount.setVisibility(View.VISIBLE);
                 holder.ivBoard.setVisibility(View.GONE);
                 holder.tvBoardCard.setVisibility(View.GONE);
+                holder.tvName.setText(attendenceList.get(position).getNameUser());
+                holder.tvName.setText("Everton");
+                holder.tvName.setVisibility(View.VISIBLE);
+
 
                 break;
 
@@ -90,16 +91,18 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
                 holder.ivCardAttendance.setImageResource(R.drawable.ic_motorcycle);
                 holder.tvPartialAmount.setText(context.getString(R.string.
                         partial_amount, formatCurrency(context, attendenceList.get(position).getValue())));
+                holder.tvName.setText(attendenceList.get(position).getNameUser());
                 break;
 
             case 5:
                 holder.ivCardAttendance.setImageResource(R.drawable.ic_bigcar);
-                holder.tvPartialAmount.setText( context.getString(R.string.
+                holder.tvPartialAmount.setText(context.getString(R.string.
                         partial_amount, formatCurrency(context, attendenceList.get(position).getValue())));
+                holder.tvName.setText(attendenceList.get(position).getNameUser());
                 break;
         }
 
-        holder.tvName.setText(attendenceList.get(position).getNameUser());
+
         holder.tvCpf.setText(cpf(attendenceList.get(position).getCpf()));
         holder.tvBoardCard.setText(boad(attendenceList.get(position).getNumberBoard()));
         holder.tvInputAdapterAttendance.setText(context.getString(R.string.input_time_attendance,
@@ -109,15 +112,18 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
             case 1:
                 holder.endService.setText("SAÍDA SEM QR-CODE");
                 attendanceOnClickSemQR(holder, position);
+                holder.vAttendance.setVisibility(View.GONE);
                 break;
             case 2:
                 holder.endService.setText("CANCELAR");
                 callingOnClick(holder, position);
+                holder.vAttendance.setVisibility(View.GONE);
                 break;
 
-                case 3:
-                    holder.endService.setText("");
-                    holder.endService.setVisibility(View.INVISIBLE);
+            case 3:
+                holder.endService.setText("");
+                holder.vAttendance.setVisibility(View.VISIBLE);
+                holder.endService.setVisibility(View.GONE);
                 break;
         }
 
@@ -161,6 +167,7 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
         TextView tvInputAdapterAttendance;
         TextView tvName;
         TextView tvPartialAmount;
+        View vAttendance;
 
         /**
          * *classe faz referência aos id dos componentes da minha view
@@ -168,6 +175,7 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
         public AttendanceViewHolder(@NonNull View itemView) {
             super(itemView);
             ivCardAttendance = itemView.findViewById(R.id.iv_card_attendance);
+            vAttendance = itemView.findViewById(R.id.v_attendance);
             ivBoard = itemView.findViewById(R.id.iv_board);
             tvName = itemView.findViewById(R.id.tv_name);
             tvCpf = itemView.findViewById(R.id.tv_cpf);

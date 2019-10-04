@@ -48,13 +48,13 @@ public class AttendanceFragment extends Fragment implements AttendenceListener {
         rvCalls = view.findViewById(R.id.rv_calls);
         List<Attendence> attendences = new ArrayList<>();
         attendences.add(new Attendence(1,"14214521452","João",1, "fgt2333",new Date(),new Date(),18,1,17,1));
-        attendences.add(new Attendence(2,"12312312322","João",2, "gdd2333",new Date(),new Date(),19,2,17,2));
-        attendences.add(new Attendence(3,"12312312322","Jose",3, "zfb2333",new Date(),new Date(),15,3,12,3));
-        attendences.add(new Attendence(4,"12312312322","Maria",1, "asf2333",new Date(),new Date(),14,4,10,4));
-        attendences.add(new Attendence(5,"12312312327","Pedro",2, "cdc2333",new Date(),new Date(),12,6,6,3));
-        attendences.add(new Attendence(6,"12312312328","Zé",3, "bes2333",new Date(),new Date(),12,8,4,2));
-        attendences.add(new Attendence(7,"12312312328","João",2, "ggu2333",new Date(),new Date(),12,2,10,3));
-        attendences.add(new Attendence(8,"12312312328","João",1, "efj2333",new Date(),new Date(),12,2,10,4));
+        attendences.add(new Attendence(2,"14812312322","João",2, "gdd2333",new Date(),new Date(),19,2,17,2));
+        attendences.add(new Attendence(3,"19612312322","Jose",3, "zfb2333",new Date(),new Date(),15,3,12,3));
+        attendences.add(new Attendence(4,"16912312322","Maria",1, "asf2333",new Date(),new Date(),14,4,10,4));
+        attendences.add(new Attendence(5,"19612312327","Pedro",2, "cdc2333",new Date(),new Date(),12,6,6,5));
+        attendences.add(new Attendence(6,"15912312328","Zé",3, "bes2333",new Date(),new Date(),12,8,4,2));
+        attendences.add(new Attendence(7,"17912312328","João",2, "ggu2333",new Date(),new Date(),12,2,10,3));
+        attendences.add(new Attendence(8,"13612312328","João",1, "efj2333",new Date(),new Date(),12,2,10,4));
         rvCalls.setLayoutManager(new LinearLayoutManager(getContext()));
         rvCalls.setAdapter(new AttendanceAdapter(attendences, getContext(),this));
 

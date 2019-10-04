@@ -43,7 +43,7 @@ public class BonusCustomerActivity extends AppCompatActivity {
         Attendence registrationData = extras.getParcelable(ATTENDENCE);
 
         if (registrationData != null) {
-            Glide.with(this).load("https://api.adorable.io/avatars/150/.png").into(acivPhotoClient);
+            Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/freedelivery-8ff6e.appspot.com/o/imagens%2FUsuario%2FyO40m4hU9dR2eoQLANMrSkkcIQP2jpeg?alt=media&token=30dffe08-64ba-4b08-acca-10c6f1ac7d0f").into(acivPhotoClient);
             tvNameCustomer.setText(registrationData.getNameUser());
             tvCpfCustomer.setText(cpf(registrationData.getCpf()));
 

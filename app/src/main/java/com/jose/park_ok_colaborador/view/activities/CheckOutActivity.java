@@ -23,6 +23,7 @@ import static com.jose.park_ok_colaborador.utils.Utils.timeFormat;
 public class CheckOutActivity extends AppCompatActivity {
 
     private CardView cmCheckOutDiscountBenefit;
+    private CardView cmBonusCustomer;
 
     private ImageView ivCheckOutCard;
     private TextView tvCheckOutNameUser;
@@ -47,53 +48,14 @@ public class CheckOutActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         final Attendence attendence = extras.getParcelable(ATTENDENCE);
 
-        mtToolbarCheckOut.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
-
-
 
         if (attendence != null) {
-
             tvCheckOutAmount.setText(getString(R.string.amount_payable, formatCurrency(this, attendence.getAmountPayable())));
             tvCheckOutInput.setText(getString(R.string.input_time, timeFormat(attendence.getDateHour(), this)));
             tvCheckOutExit.setText(getString(R.string.exit_time, timeFormat(attendence.getExitAttendece(), this)));
             tvCheckOutNameUser.setText(attendence.getNameUser());
             tvCheckOutCpf.setText(cpf(attendence.getCpf()));
             tvCheckOutBoardUser.setText(boad(attendence.getNumberBoard()));
-        }
-
-//            switch (attendence.getTypeAttendance()) {
-//                case 1:
-//                    cmCheckOutDiscountBenefit.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//
-//                        }
-//                    });
-//                    break;
-////                case 2:
-////                    tvPaymentMethod.setText(getString(R.string.form_of_payment, FORM_OF_PAYMENT_AMOUNT));
-////                    break;
-//
-//            }
-
-//
-//            if (attendence.getTypeService() == 1) {
-//                tvDiscountAmount.setText(getString(R.string.amount_discount_details, formatCurrency(this, attendence.getAmount())));
-//                ivDiscountBenefit.setImageResource(R.drawable.ic_discount_benefit);
-//                tvTotalDiscount.setText(getString(R.string.discount_benefit, formatCurrency(this, attendence.getDiscountAmount())));
-//
-//
-//            } else {
-//                ivDiscountBenefit.setImageResource(R.drawable.ic_gift);
-//                tvTotalDiscount.setVisibility(View.VISIBLE);
-//                tvTotalDiscount.setText("Benefício de tempo: + 10 minutos");
-//            }
 
 
 
@@ -101,11 +63,28 @@ public class CheckOutActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(CheckOutActivity.this, PaymentMethodActivity.class);
-                    i.putExtra(ATTENDENCE,attendence);
+                    i.putExtra(ATTENDENCE, attendence);
                     startActivity(i);
                 }
             });
 
+        cmBonusCustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CheckOutActivity.this, PaymentMethodActivity.class);
+                i.putExtra(ATTENDENCE, attendence);
+                startActivity(i);
+            }
+        });
+
+    }
+
+        mtToolbarCheckOut.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     @Override
@@ -116,7 +95,9 @@ public class CheckOutActivity extends AppCompatActivity {
         editor.commit();
         super.onBackPressed();
     }
+
     private void initializeComponents() {
+        cmBonusCustomer = findViewById(R.id.cm_bonus_customer);
         cmCheckOutDiscountBenefit = findViewById(R.id.cm_check_out_discount_benefit);
         ivCheckOutCard = findViewById(R.id.iv_check_out_card);
         tvCheckOutNameUser = findViewById(R.id.tv_check_out_name_user);

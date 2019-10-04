@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,168 +16,183 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/appCompatImageView2"
+                app:layout_constraintEnd_toEndOf="@+id/iv_screen_login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_screen_login"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_logo_park_ok"
+                tools:ignore="VectorDrawableCompat" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_screen_login" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_screen_login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_mountain"
+                app:layout_constraintBottom_toTopOf="@+id/appCompatImageView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_screen_login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/iv_screen_login"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/ic_mountain"
-                    app:layout_constraintBottom_toTopOf="@+id/appCompatImageView2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/appCompatImageView2"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@android:color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_screen_login"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:elevation="5dp"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/appCompatImageView2"
+                app:strokeColor="@color/colorStrokeCardView"
+                app:strokeWidth="1dp">
 
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cv_screen_login"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
-                    android:elevation="5dp"
-                    app:cardCornerRadius="15dp"
-                    app:strokeColor="@color/colorStrokeCardView"
-                    app:strokeWidth="1dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/appCompatImageView2">
+                    android:layout_height="wrap_content">
 
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_title_Passwor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/quicksand_regular"
+                        android:text="Senha"
+                        android:textColor="@color/colorNameTextView"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_Passwor"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_Passwor"
+                        app:layout_constraintHorizontal_bias="0.07"
+                        app:layout_constraintStart_toEndOf="@+id/tv_Passwor"
+                        app:layout_constraintStart_toStartOf="@+id/tv_Passwor" />
+
+                    <TextView
+                        android:id="@+id/tv_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="42dp"
+                        android:text="@string/tv_title_login"
+                        android:textColor="@color/colorNameTextView"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
-                        <EditText
-                            android:id="@+id/tv_Passwor"
-                            style="@style/MaterialTextViewTheme"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="18dp"
-                            android:layout_marginTop="40dp"
-                            android:layout_marginEnd="18dp"
-                            android:layout_marginBottom="40dp"
+                    <TextView
+                        android:id="@+id/tv_title_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/quicksand_regular"
+                        android:text="E-mail"
+                        android:textColor="@color/colorNameTextView"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_email"
+                        app:layout_constraintStart_toStartOf="@+id/tv_email" />
+
+                    <TextView
+                        android:id="@+id/tv_title_rescupe_senha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/quicksand_regular"
+                        android:text="Esqueci minha senha!"
+                        android:textColor="@color/colorNameTextView"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_Passwor"
+                        app:layout_constraintStart_toStartOf="@+id/tv_Passwor"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_Passwor" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_send"
+                        style="@style/MaterialButtonTheme"
+                        android:layout_marginBottom="36dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title_rescupe_senha"
+                        app:strokeWidth="1dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tv_email"
+                        style="@style/TextInputLayoutTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginEnd="18dp"
+                        app:errorEnabled="true"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_Passwor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_login">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tv_tiet_emali"
+                            style="@style/TextInputTextTheme"
+                            android:imeOptions="actionNext"
+                            android:inputType="textImeMultiLine"
+                            android:padding="12dp"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tv_Passwor"
+                        style="@style/TextInputLayoutTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="18dp"
+                        app:errorEnabled="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_email">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tv_tiet_Passwor"
+                            style="@style/TextInputTextTheme"
+                            android:imeOptions="actionNext"
                             android:inputType="textPassword"
                             android:padding="12dp"
-                            android:textSize="18sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+                            android:textSize="18sp" />
 
-                        <EditText
-                            android:id="@+id/tv_email"
-                            style="@style/MaterialTextViewTheme"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="18dp"
-                            android:layout_marginTop="50dp"
-                            android:layout_marginEnd="18dp"
-                            android:inputType="textPersonName"
-                            android:padding="12dp"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toTopOf="@+id/tv_Passwor"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_login" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <TextView
-                            android:id="@+id/tv_title_Passwor"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:fontFamily="@font/quicksand_regular"
-                            android:text="Senha"
-                            android:textColor="@color/colorTextViewText"
-                            app:layout_constraintBottom_toTopOf="@+id/tv_Passwor"
-                            app:layout_constraintEnd_toEndOf="@+id/tv_Passwor"
-                            app:layout_constraintHorizontal_bias="0.07"
-                            app:layout_constraintStart_toEndOf="@+id/tv_Passwor"
-                            app:layout_constraintStart_toStartOf="@+id/tv_Passwor" />
+            </com.google.android.material.card.MaterialCardView>
 
-                        <TextView
-                            android:id="@+id/tv_login"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="42dp"
-                            android:text="@string/tv_title_login"
-                            android:textColor="@color/colorTextViewText"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/tv_title_email"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginBottom="8dp"
-                            android:fontFamily="@font/quicksand_regular"
-                            android:text="E-mail"
-                            android:textColor="@color/colorTextViewText"
-                            app:layout_constraintBottom_toTopOf="@+id/tv_email"
-                            app:layout_constraintStart_toStartOf="@+id/tv_email" />
-
-                        <TextView
-                            android:id="@+id/tv_title_rescupe_senha"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:fontFamily="@font/quicksand_regular"
-                            android:text="Esqueci minha senha!"
-                            android:textColor="@color/colorTextViewText"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="@+id/tv_Passwor"
-                            app:layout_constraintStart_toStartOf="@+id/tv_Passwor"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_Passwor" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btn_send"
-                            style="@style/MaterialButtonTheme"
-                            android:layout_marginBottom="36dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_title_rescupe_senha"
-                            app:strokeWidth="1dp" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintBottom_toTopOf="@+id/appCompatImageView2"
-                    app:layout_constraintEnd_toEndOf="@+id/iv_screen_login"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/iv_screen_login"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/ic_logo_park_ok"
-                    tools:ignore="VectorDrawableCompat" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 

@@ -33,7 +33,7 @@ public class RegistrationDataActivity extends AppCompatActivity {
 
         Users users = new Users(1, "José Alves", "14587965288", "jralves187@gmail.com");
         if (users != null){
-            Glide.with(this).load("https://api.adorable.io/avatars/285/abott@adorable.png").into(acivPhotoUserDetais);
+            Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/freedelivery-8ff6e.appspot.com/o/imagens%2FUsuario%2FyO40m4hU9dR2eoQLANMrSkkcIQP2jpeg?alt=media&token=30dffe08-64ba-4b08-acca-10c6f1ac7d0f").into(acivPhotoUserDetais);
             tvNameRegister.setText(users.getNameUser());
             tvCpfRegister.setText(cpfRegistration(users.getCpf()));
             tvEmaiRegister.setText(users.getEmail());

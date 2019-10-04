@@ -44,7 +44,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/quicksand_bold"
-            android:textColor="@color/colorTextViewText"
+            android:textColor="@color/colorNameTextView"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_card_attendance"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/quicksand_light"
-            android:textColor="@color/colorTextViewText"
+            android:textColor="@color/colorNameTextView"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/tv_name"
             app:layout_constraintTop_toBottomOf="@id/tv_name"
@@ -89,7 +89,7 @@
             android:textAllCaps="true"
             android:capitalize="words"
             android:fontFamily="@font/quicksand_bold"
-            android:textColor="@color/colorTextViewText"
+            android:textColor="@color/colorNameTextView"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_board"
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:fontFamily="@font/quicksand_light"
-            android:textColor="@color/colorTextViewText"
+            android:textColor="@color/colorNameTextView"
             android:textStyle="bold"
             android:text="Entrada: 08:56"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,12 +113,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand_light"
-            android:textColor="@color/colorTextViewText"
+            android:textColor="@color/colorNameTextView"
             android:textStyle="bold"
             android:text="Valor parcial: R$ 15,00"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_Input_adapter_attendance"
             app:layout_constraintTop_toTopOf="@+id/tv_Input_adapter_attendance"/>
+
+
+        <View
+            android:id="@+id/v_attendance"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_end_servicer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Input_adapter_attendance" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_end_servicer"
@@ -127,8 +137,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_Input_adapter_attendance"/>
-
+            app:layout_constraintTop_toBottomOf="@id/v_attendance"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

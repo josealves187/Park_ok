@@ -55,15 +55,22 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
             }
         });
 
-
-
         if (attendence != null) {
-
             tvPaymentMethodAmountPayable.setText(getString(R.string.amount_payable, formatCurrency(this, attendence.getValue())));
             tv_payment_method_discount.setText(getString(R.string.discount_paid, formatCurrency(this, attendence.getAmountPayable())));
             tv_payment_method_final_value.setText(getString(R.string.amount_final_value, formatCurrency(this, attendence.getFinalValue())));
 
+        }
 
+        switch (attendence.getTypeAttendance()){
+            case 1:
+            tvPaymentMethodAmountPayable.setText(getString(R.string.amount_payable, formatCurrency(this, attendence.getValue())));
+            tv_payment_method_discount.setText(getString(R.string.discount_paid, formatCurrency(this, attendence.getAmountPayable())));
+            tv_payment_method_final_value.setText(getString(R.string.amount_final_value, formatCurrency(this, attendence.getFinalValue())));
+            break;
+            case 2:
+            tv_payment_method_final_value.setText(getString(R.string.amount_final_value, formatCurrency(this, attendence.getFinalValue())));
+            break;
         }
 
     }
