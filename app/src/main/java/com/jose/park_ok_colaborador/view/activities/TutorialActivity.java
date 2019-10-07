@@ -25,13 +25,8 @@ public class TutorialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
+        initializeComponent();
 
-        rvTutorial = findViewById(R.id.rv_tutorial);
-
-        //ADD Toobar
-        Toolbar toolbar = findViewById(R.id.mt_toolbar_tutorial);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         List<Tutorial> tutorials = new ArrayList<>();
         tutorials.add(new Tutorial(1,getString(R.string.text_tutorial)));
@@ -42,5 +37,15 @@ public class TutorialActivity extends AppCompatActivity {
         rvTutorial.setAdapter(new TutorialAdapter(tutorials,this));
 
 
+    }
+
+    private void initializeComponent() {
+
+        rvTutorial = findViewById(R.id.rv_tutorial);
+
+        //ADD Toobar
+        Toolbar toolbar = findViewById(R.id.mt_toolbar_tutorial);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

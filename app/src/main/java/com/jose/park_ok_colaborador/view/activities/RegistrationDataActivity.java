@@ -29,6 +29,7 @@ public class RegistrationDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration_data);
         initializeComponents();
         setSupportActionBar(mtToolbarDataRegistrion);
+        eventButton();
 
 
         Users users = new Users(1, "José Alves", "14587965288", "jralves187@gmail.com");
@@ -39,6 +40,10 @@ public class RegistrationDataActivity extends AppCompatActivity {
             tvEmaiRegister.setText(users.getEmail());
         }
 
+
+    }
+
+    private void eventButton() {
         mtToolbarDataRegistrion.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +52,7 @@ public class RegistrationDataActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public void onBackPressed(){
 
@@ -55,6 +61,7 @@ public class RegistrationDataActivity extends AppCompatActivity {
         editor.commit();
         super.onBackPressed();
     }
+
     private void initializeComponents() {
         mtToolbarDataRegistrion = findViewById(R.id.mt_toolbar_data_registrion);
         acivPhotoUserDetais = findViewById(R.id.aciv_photo_user_detais);

@@ -4,11 +4,11 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 
-import java.text.DateFormat;
+import com.jose.park_ok_colaborador.commom.Attendence;
+
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.time.OffsetTime;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -57,29 +57,14 @@ public abstract class Utils {
     @SuppressLint("SimpleDateFormat")
     public static String timeFormat( Date date,Context context){
 
-        String formatDate = "HH:mm";
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            new SimpleDateFormat(formatDate,
-                    (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) ?
-                            context.getResources().getConfiguration().getLocales().get(0)
-                            : context.getResources().getConfiguration().locale);
-            OffsetTime offset = OffsetTime.now();
-            return (offset.getHour() + " : " + offset.getMinute()
-            );
-        }
-
-        return "";
+        long data = System.currentTimeMillis();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+        String dataString = simpleDateFormat.format(data);
+        return dataString;
     }
 
-//    private static String zeroOffLeft(){
-//
-//
-//    }
-    private static Calendar dateToCalendar(Date date) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        return calendar;
-    }
+
+
 
 
     /**

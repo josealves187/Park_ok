@@ -1,6 +1,7 @@
 package com.jose.park_ok_colaborador.view.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -35,14 +36,13 @@ public class BoardAndDescriptionActivity extends AppCompatActivity implements An
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board_and_description);
         intComponents();
-
-        //ADD Toobar
-        Toolbar toolbar = findViewById(R.id.mt_toolbar_details);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        envetButton();
         // set animation listener
         animFadein.setAnimationListener(this);
+
+    }
+
+    private void envetButton(){
 
         tvInformation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,18 +80,26 @@ public class BoardAndDescriptionActivity extends AppCompatActivity implements An
                 startActivity(intent);
             }
         });
+
     }
 
     private void intComponents() {
-
         ivArrow = findViewById(R.id.iv_arrow);
         etAddInformation = findViewById(R.id.et_add_information);
         nsvBoardDescription = findViewById(R.id.nsv_board_description);
         btnCheckInVehicle= findViewById(R.id.btn_check_in_vehicle);
 
+
         tvInformation = findViewById(R.id.tv_information);
         tvTitleDescription= findViewById(R.id.tv_title_description);
         tvVehicleBoad = findViewById(R.id.tv_vehicle_boad);
+
+        //ADD Toobar
+        Toolbar toolbar = findViewById(R.id.mt_toolbar_details);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         // load the animation
         animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
@@ -120,5 +128,15 @@ public class BoardAndDescriptionActivity extends AppCompatActivity implements An
     @Override
     public void onAnimationRepeat(Animation animation) {
 
+    }
+
+    //controlando onBackPressed (botão de volta do aparelho celular)
+    @Override
+    public void onBackPressed(){
+
+        SharedPreferences.Editor editor = getSharedPreferences("PARKOK", MODE_PRIVATE).edit();
+        editor.putInt("SCREEN_ORIGEN", 1);
+        editor.commit();
+        super.onBackPressed();
     }
 }

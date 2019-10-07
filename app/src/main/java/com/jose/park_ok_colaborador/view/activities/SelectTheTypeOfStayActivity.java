@@ -71,7 +71,6 @@ public class SelectTheTypeOfStayActivity extends AppCompatActivity implements Vi
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-
     /**
      * Isso é chamado quando o usuário toca no item (no modo de toque) ou atribui foco ao item com
      * as teclas de navegação ou o trackball e pressiona a tecla “enter” ou o pressiona no trackball.

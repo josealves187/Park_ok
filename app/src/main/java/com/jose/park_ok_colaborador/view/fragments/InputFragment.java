@@ -39,14 +39,14 @@ public class InputFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_input, container, false);
         cmInputQrcode = view.findViewById(R.id.cm_input_qrcode);
-        eventoButton();
+        eventButton();
 
 
 
         return view;
     }
 
-    private void eventoButton() {
+    private void eventButton() {
         cmInputQrcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

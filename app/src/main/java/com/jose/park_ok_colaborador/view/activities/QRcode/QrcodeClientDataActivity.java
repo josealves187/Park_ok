@@ -39,6 +39,7 @@ public class QrcodeClientDataActivity extends AppCompatActivity {
         //inicializar componente
         initializeComponent();
         setSupportActionBar(mtToolbarDetails);
+        eventBuntton();
 
 
         Users users = new Users(1, "José", "14587965288", "jralves187@gmail.com");
@@ -48,6 +49,21 @@ public class QrcodeClientDataActivity extends AppCompatActivity {
             tvCpfDataClien.setText(cpf(users.getCpf()));
 
         }
+
+    }
+
+    private void eventBuntton() {
+        /***
+         * redirected screen
+         * redirecionando telas Navigation da toolbar
+         * */
+        mtToolbarDetails.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+
+            }
+        });
 
         cmResgisterEntryDataClient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,17 +81,6 @@ public class QrcodeClientDataActivity extends AppCompatActivity {
             }
         });
 
-        /***
-         * redirected screen
-         * redirecionando telas Navigation da toolbar
-         * */
-        mtToolbarDetails.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-
-            }
-        });
     }
 
     //controlando onBackPressed (botão de volta do aparelho celular)

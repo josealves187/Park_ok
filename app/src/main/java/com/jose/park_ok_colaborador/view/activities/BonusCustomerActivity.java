@@ -22,6 +22,7 @@ import static com.jose.park_ok_colaborador.utils.MaskTextView.cpf;
 public class BonusCustomerActivity extends AppCompatActivity {
 
     private MaterialButton btnReportPlate;
+    private MaterialButton btnCheckCancel;
     private MaterialToolbar mtToolbarbonusCustomer;
     private EditText tvValueBonusCustomer;
     private TextView tvNameCustomer;
@@ -66,6 +67,14 @@ public class BonusCustomerActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        btnCheckCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(BonusCustomerActivity.this, HomeActivity.class);
+                startActivity(i);
+                onBackPressed();
+            }
+        });
 
     }
 
@@ -86,6 +95,7 @@ public class BonusCustomerActivity extends AppCompatActivity {
         private void initializeComponents () {
             tvValueBonusCustomer = findViewById(R.id.tv_value_bonus_customer);
             btnReportPlate = findViewById(R.id.btn_report_plate);
+            btnCheckCancel = findViewById(R.id.btn_check_cancel);
             mtToolbarbonusCustomer = findViewById(R.id.mt_toolbar_bonus_customer);
             acivPhotoClient = findViewById(R.id.aciv_photo_bonus_customer_client);
             tvNameCustomer = findViewById(R.id.tv_name_bonus_customer);

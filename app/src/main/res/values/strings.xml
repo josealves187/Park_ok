@@ -75,9 +75,11 @@
         \nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         \nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         \nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
-    <string name="input_qr_code">ENTRADA QR CODE</string>
+    <string name="input_qr_code">QR CODE</string>
     <string name="entry_completed_dialog_boxes">Entrada realizada com sucesso!</string>
     <string name="text_button_dialog_boxes">OK</string>
     <string name="title_dialog_boxes">Saída realizada com sucesso!</string>
+    <string name="btn_cacenla_board_and_descrip">CACENLA</string>
+    <string name="btn_check_in_vehicle">REGISTRAR ENTRADA</string>
 
 </resources>

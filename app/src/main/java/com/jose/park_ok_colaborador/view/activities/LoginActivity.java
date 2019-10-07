@@ -28,16 +28,18 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         InitializedComponents();
-        eventoButton();
+        eventButton();
     }
 
 
-    private void eventoButton() {
+    private void eventButton() {
 
         bnt_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    checkUserName();
+                    //checkUserName();
+                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(i);
 
 
             }

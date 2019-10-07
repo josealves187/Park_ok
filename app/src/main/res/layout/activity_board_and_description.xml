@@ -17,9 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -30,7 +27,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="18dp"
                 android:padding="12dp"
                 android:textSize="18sp"
@@ -76,7 +73,7 @@
                 android:id="@+id/tv_name_data_client"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="26dp"
+                android:layout_marginTop="18dp"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Informe a placa do veículo"
                 android:textColor="@color/colorNameTextView"
@@ -102,7 +99,7 @@
                 android:id="@+id/tv_title_vehicle_plate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="26dp"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Informe a placa do veículo"
                 android:textColor="@color/colorNameTextView"
@@ -115,7 +112,7 @@
                 android:id="@+id/tv_title_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="36dp"
                 android:fontFamily="@font/quicksand_regular"
                 android:text="Descrição (Opcional)"
                 android:textColor="@color/colorNameTextView"
@@ -154,7 +151,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="36dp"
-                android:text="REGISTRAR ENTRADA"
+                android:layout_marginTop="18dp"
+                android:text="@string/btn_check_in_vehicle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -165,7 +163,7 @@
                 android:id="@+id/aciv_photo_data_client"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="28dp"
                 android:src="@drawable/ic_bord_description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

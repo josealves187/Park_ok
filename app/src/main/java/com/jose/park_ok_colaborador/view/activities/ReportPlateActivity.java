@@ -34,9 +34,11 @@ public class ReportPlateActivity extends AppCompatActivity {
         //inicializar componente
         initializeComponents();
         setSupportActionBar(mtToolbarDetails);
+        eventButton();
 
+    }
 
-
+    private void eventButton() {
         mtToolbarDetails.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

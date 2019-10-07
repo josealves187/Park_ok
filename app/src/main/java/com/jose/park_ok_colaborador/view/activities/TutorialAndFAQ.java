@@ -23,11 +23,13 @@ public class TutorialAndFAQ extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial_and_faq);
-
         initializeComponents();
+        eventButton();
         setSupportActionBar(mtToolbarTutorialFaq);
 
+    }
 
+    private void eventButton() {
         mtToolbarTutorialFaq.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +62,7 @@ public class TutorialAndFAQ extends AppCompatActivity {
         editor.commit();
         super.onBackPressed();
     }
+
     private void initializeComponents() {
         mtToolbarTutorialFaq = findViewById(R.id.mt_toolbar_tutorial_faq);
         mcTutorial = findViewById(R.id.mc_tutorial);

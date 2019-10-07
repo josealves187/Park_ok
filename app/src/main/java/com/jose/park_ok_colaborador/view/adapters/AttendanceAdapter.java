@@ -129,6 +129,8 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
 
     }
 
+
+
     private void callingOnClick(@NonNull AttendanceViewHolder holder, final int position) {
         holder.endService.setOnClickListener(new View.OnClickListener() {
             @Override
