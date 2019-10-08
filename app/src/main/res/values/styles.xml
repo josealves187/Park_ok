@@ -12,7 +12,7 @@
 
     <!-- Customizando o Titulo do Toolbar Menu -->
     <style name="MaterialToolbarMenuStyleTheme" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
-        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:fontFamily">@font/quicksand_light</item>
         <item name="android:textColor">@color/color_toolbar_menu</item>
         <item name="android:textSize">18sp</item>
         <item name="android:layout_width">match_parent</item>

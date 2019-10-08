@@ -8,6 +8,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -62,6 +63,7 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
 
         }
 
+        Log.d(PaymentMethodActivity.class.getSimpleName(),String.valueOf(attendence.getTypeAttendance()));
         switch (attendence.getTypeAttendance()){
             case 1:
             tvPaymentMethodAmountPayable.setText(getString(R.string.amount_payable, formatCurrency(this, attendence.getValue())));
@@ -70,6 +72,10 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
             break;
             case 2:
             tv_payment_method_final_value.setText(getString(R.string.amount_final_value, formatCurrency(this, attendence.getFinalValue())));
+                tvPaymentMethodAmountPayable.setVisibility(View.GONE);
+                tv_payment_method_discount.setText("Cliente ganhou: 15 minutos");
+                tv_payment_method_discount.setVisibility(View.VISIBLE);
+
             break;
         }
 

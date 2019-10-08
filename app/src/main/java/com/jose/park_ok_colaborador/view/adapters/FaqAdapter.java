@@ -1,9 +1,12 @@
 package com.jose.park_ok_colaborador.view.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jose.park_ok_colaborador.R;
@@ -46,10 +50,21 @@ public class FaqAdapter extends RecyclerView.Adapter<FaqAdapter.FaqViewHolder> {
     public void onBindViewHolder(@NonNull FaqAdapter.FaqViewHolder holder, int position) {
 
 
-
         holder.information.setText(faqs.get(position).getInformation());
-        holder.topic.setText(String.valueOf(position + 1) + faqs.get(position ).getTopic());
+        String text = (position + 1) + "."+ faqs.get(position ).getTopic().trim().replaceAll("\n ","");
+        holder.topic.setText(text);
 
+        SpannableString ss = new SpannableString(text);
+        ss.setSpan(new ForegroundColorSpan(ContextCompat.getColor(context,R.color.colorTitleTextView)), 0, 2, 0);
+        ss.setSpan(
+                new StyleSpan(Typeface.BOLD),
+                0,
+                2,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        );
+
+        holder.topic.setText(ss);
+        holder.topic.setMovementMethod(LinkMovementMethod.getInstance());
 
     }
 

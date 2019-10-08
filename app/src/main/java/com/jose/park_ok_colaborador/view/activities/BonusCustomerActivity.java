@@ -39,6 +39,7 @@ public class BonusCustomerActivity extends AppCompatActivity {
         //inicializar componente
         initializeComponents();
         setSupportActionBar(mtToolbarbonusCustomer);
+        eventButton();
 
         Bundle extras = getIntent().getExtras();
         Attendence registrationData = extras.getParcelable(ATTENDENCE);
@@ -50,6 +51,9 @@ public class BonusCustomerActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    private void eventButton() {
         mtToolbarbonusCustomer.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,13 +79,11 @@ public class BonusCustomerActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
     }
 
 
     @Override
     public void onBackPressed() {
-
         SharedPreferences.Editor editor = getSharedPreferences("PARKOK", MODE_PRIVATE).edit();
         editor.putInt("SCREEN_ORIGEN", 2);
         editor.commit();

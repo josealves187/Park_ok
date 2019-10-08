@@ -82,4 +82,17 @@
     <string name="btn_cacenla_board_and_descrip">CACENLA</string>
     <string name="btn_check_in_vehicle">REGISTRAR ENTRADA</string>
 
+
+
+
+    <string name="tv_dicount_on_payment">DESCONTAR NO PAGAMENTO</string>
+    <string name="tv_title_time_check_out">ACUMULAR MINUTOS</string>
+    <string name="tv_hoursman_title_check">Horista</string>
+    <string name="cancel_check_out">Cancelar</string>
+
+
+    <string name="faqs_tutorial">FAQS</string>
+    <string name="tutorial_and_faq">TUTORIAL</string>
+
+
 </resources>

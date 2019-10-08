@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.button.MaterialButton;
 import com.jose.park_ok_colaborador.R;
 import com.jose.park_ok_colaborador.commom.Attendence;
 
@@ -32,6 +33,7 @@ public class CheckOutActivity extends AppCompatActivity {
     private TextView tvCheckOutInput;
     private TextView tvCheckOutExit;
     private TextView tvCheckOutAmount;
+    private CardView cmCheckCancel;
 
     private MaterialToolbar mtToolbarCheckOut;
 
@@ -43,6 +45,7 @@ public class CheckOutActivity extends AppCompatActivity {
         //inicializar componente
         initializeComponents();
         setSupportActionBar(mtToolbarCheckOut);
+        entetButton();
 
 
         Bundle extras = getIntent().getExtras();
@@ -58,37 +61,52 @@ public class CheckOutActivity extends AppCompatActivity {
             tvCheckOutBoardUser.setText(boad(attendence.getNumberBoard()));
 
 
-
             cmCheckOutDiscountBenefit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(CheckOutActivity.this, PaymentMethodActivity.class);
+                    attendence.setTypeAttendance(1);
                     i.putExtra(ATTENDENCE, attendence);
                     startActivity(i);
                 }
             });
 
-        cmBonusCustomer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(CheckOutActivity.this, PaymentMethodActivity.class);
-                i.putExtra(ATTENDENCE, attendence);
-                startActivity(i);
-            }
-        });
+            cmBonusCustomer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(CheckOutActivity.this, PaymentMethodActivity.class);
+                    attendence.setTypeAttendance(2);
+                    i.putExtra(ATTENDENCE, attendence);
+                    startActivity(i);
+                }
+            });
+
+        }
+
 
     }
 
+    private void entetButton() {
         mtToolbarCheckOut.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+
+        cmCheckCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CheckOutActivity.this, HomeActivity.class);
+                startActivity(i);
+                onBackPressed();
+            }
+        });
+
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
 
         SharedPreferences.Editor editor = getSharedPreferences("PARKOK", MODE_PRIVATE).edit();
         editor.putInt("SCREEN_ORIGEN", 2);
@@ -106,6 +124,7 @@ public class CheckOutActivity extends AppCompatActivity {
         tvCheckOutInput = findViewById(R.id.tv_check_out_input);
         tvCheckOutExit = findViewById(R.id.tv_check_out_exit);
         tvCheckOutAmount = findViewById(R.id.tv_check_out_amount);
+        cmCheckCancel = findViewById(R.id.cm_check_cancel);
         mtToolbarCheckOut = findViewById(R.id.mt_toolbar_check_out);
     }
 }

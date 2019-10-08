@@ -24,8 +24,9 @@ public class TutorialAndFAQ extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial_and_faq);
         initializeComponents();
-        eventButton();
         setSupportActionBar(mtToolbarTutorialFaq);
+        eventButton();
+
 
     }
 
